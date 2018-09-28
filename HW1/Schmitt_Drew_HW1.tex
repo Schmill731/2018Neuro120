@@ -55,12 +55,12 @@
 We implement Euler Integration as follows in Matlab:
 \lstinputlisting{euler_solver.m}
 
-\begin{wrapfigure}{R}{0.3\textwidth}
+\begin{figure}[ht!]
 \centering
-\includegraphics[width=0.1\textwidth]{simulate_hh_dt_1.eps}
+\includegraphics[width=1\textwidth]{simulate_hh_dt_1.eps}
 \caption{Result of Euler Integration with $\Delta t = 0.01$.}
 \label{fig:euler_integration_one}
-\end{wrapfigure}
+\end{figure}
 
 After changing line $29$ in \lstinline{simulate_hh.m} to \lstinline{use_euler=true}, we produce Figure \ref{fig:euler_integration_one}:
 
@@ -69,12 +69,12 @@ We alter the setting of $\Delta t$ in \lstinline{simulate_hh.m} to $0.09$ and $0
 
 Alternatively, when we set the step size to $0.07$, we get a simulation that looks from afar like it properly models the neural response, but upon close inspection, we can see that during the repolarization stage of the action potential, the model results in large oscillations. This indicates to us that we have too large a step size and need a smaller one in order to properly approximate the derivative of the gating variables.
 
-\begin{wrapfigure}{L}{0.5\textwidth}
+\begin{figure}[ht!]
 \centering
-\includegraphics[width=0.48\textwidth]{simulate_hh_dt_9.eps}
+\includegraphics[width=1\textwidth]{simulate_hh_dt_9.eps}
 \caption{Result of Euler Integration with $\Delta t = 0.09$.}
 \label{fig:euler_integration_nine}
-\end{wrapfigure}
+\end{figure}
 
 \section{Question 2: Basic Spike Generation}
 We zoom in (by using the figure tools) to the first action potential that is generated using our Euler integration model and display this in Figure \ref{fig:action_potential_close_up}
@@ -87,12 +87,12 @@ We zoom in (by using the figure tools) to the first action potential that is gen
 
 \section{Question 4: Refractory Period}
 
-\begin{wrapfigure}{L}{0.5\textwidth}
+\begin{figure}[ht!]
 \centering
-\includegraphics[width=0.48\textwidth]{simulate_hh_dt_7.eps}
+\includegraphics[width=1\textwidth]{simulate_hh_dt_7.eps}
 \caption{Result of Euler Integration with $\Delta t = 0.07$.}
 \label{fig:euler_integration_seven}
-\end{wrapfigure}
+\end{figure}
 
 \subsection{Spikes Fired for 12ms Pulse Separation}
 
@@ -100,12 +100,12 @@ We zoom in (by using the figure tools) to the first action potential that is gen
 
 \section{Question 5: History Dependence}
 
-\begin{wrapfigure}{L}{0.5\textwidth}
+\begin{figure}[ht!]
 \centering
-\includegraphics[width=0.48\textwidth]{simulate_hh_action_potential.eps}
+\includegraphics[width=1\textwidth]{simulate_hh_action_potential.eps}
 \caption{A close-up look of a simulated action potential. Generated using the Euler integration model created in Question 1.}
 \label{fig:action_potential_close_up}
-\end{wrapfigure}
+\end{figure}
 
 \subsection{Effects of Increasing Current on Firing Rate}
 
