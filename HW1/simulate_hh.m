@@ -26,7 +26,7 @@ Iapp = @(t) (t>10 & t < 12)*10 + (t>10+t_sep & t < 12+t_sep)*10;
 %Iapp  = @(t) I0 + I1*sin(omega*t);
 
 %% Simulate HH dynamics
-use_euler = false;
+use_euler = true;
 
 theta0 = [0.0003    0.0529    0.3177    0.5961]; % Initial state
 Tfinal = 200; % Duration of simulation in ms
