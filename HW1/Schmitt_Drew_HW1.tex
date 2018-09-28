@@ -77,11 +77,13 @@ Alternatively, when we set the step size to $0.07$, we get a simulation that loo
 \end{figure}
 
 \section{Question 2: Basic Spike Generation}
-We zoom in (by using the figure tools) to the first action potential that is generated using our Euler integration model and display this in Figure \ref{fig:action_potential_close_up}
+We zoom in (by using the figure tools) to the first action potential that is generated using our Euler integration model and display this in Figure \ref{fig:action_potential_close_up}. This figure illustrates how our simulated action potential slowly increases in membrane potential while there is an input current of $10\mu A$ until it hits the threshold for activation around a membrane potential of $20mV$. This activity is the result of the gating variable $m$ (which mimics the activation of a sodium channel) as we can see a similar rise in its value. After the rapid increase in the membrane potential, we see there is a rapid rise in the probability of finding a potassium channel activated (or open), which is shown by gating variable $n$. Somewhat delayed to this opening of potassium channels, the sodium channel inactivation probability increases (given by $1-h$). The combination of these two events begin to lower the membrane potential rapidly. Looking again at $m$, we see that most of the sodium channels rapidly become inactive, and now the only effect on the membrane potential is from the gating variables $n$ and $h$. These two gating variables slowly return to baseline, which results in a hyperpolarization of the membrane potential that slowly returns to baseline.
 
 \section{Question 3: Firing Rate for Constant Inputs}
 
 \subsection{The Relationship Between Firing Rate and Applied Input Current}
+
+
 
 \subsection{Minimum Sustained Firing Rate}
 
