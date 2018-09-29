@@ -35,4 +35,4 @@ end
 
 plot([0:15], fr)
 ylabel('Firing rate (Hz)')
-zlabel('Current ($\mu$A)', 'Interpreter','latex') 
+xlabel('Current ($\mu$A)', 'Interpreter','latex') 
