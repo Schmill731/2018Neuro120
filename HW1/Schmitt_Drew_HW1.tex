@@ -137,11 +137,47 @@ By looking at the gating variable behavior, we can understand why only spike was
 
 \subsection{Effects of Increasing Current on Firing Rate}
 
+After uncommenting line 16 in \lstinline{simulate_hh.m}, we get Figure \ref{fig:8ma_stim}, which shows us that the firing rate of the neuron is 62.5 Hz.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=1\textwidth]{8ma_stim.eps}
+\caption{The behavior of a simulated neuron based on a Euler integration Hodgkin-Huxley Model in response to 8$\mu$A of applied input current.}
+\label{fig:8ma_stim}
+\end{figure}
+
 \subsection{Effects of Decreasing Current on Firing Rate}
+
+After uncommenting line 19 of \lstinline{simulate_hh.m}, we get Figure \ref{fig:decrease_stim}, which shows us that the firing rate of the neuron drops to 0 Hz after the drop in currrent.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=1\textwidth]{decrease_stim.eps}
+\caption{The behavior of a simulated neuron based on a Euler integration Hodgkin-Huxley Model in response to decreasing applied input current.}
+\label{fig:decrease_stim}
+\end{figure}
 
 \subsection{Firing Rate Curve for $10\mu A$ to $15\mu A$}
 
+We alter \lstinline{estimate_firing_rate.m} to test applied input currents from $10\mu A$ to $15\mu A$, and plot it in Figure \ref{fig:5c}. We see from this that it results in an increasing firing rate, which is also seen in Figure \ref{fig:firing_rate} from 3a. Checking the values of these, we see that both ranges result in the same firing rate curve.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=1\textwidth]{5c.eps}
+\caption{The firing rate of a simulated neuron as a function of the applied input current from $10\mu A$ to $15\mu A$. The simulated neuron was based on a Euler integration Hodgkin-Huxley Model.}
+\label{fig:5c}
+\end{figure}
+
 \subsection{Effects of Turning the Current Off on Firing Rate}
+
+We change line 19 in \lstinline{simulate_hh.m} to produce Figure \ref{fig:5d}. We see from this figure that the neuron had a steady firing rate while the current was on, and then it went back to its normal resting potential. We see from looking at the gating variables that the neuron would fire, which would place it in a refractory period (see question 4 for a description of the gating variables during this refractory period), and when the gating variables began to return to their normal state, the neuron would fire again. In particular, when the inactivation probability was low (1-h) as well as the potassium channel activation probability was low (n), the neuron would fire again. This continued until the current was turned off, at which point the gating variables returned to their baseline states.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=1\textwidth]{5d.eps}
+\caption{The behavior of a simulated neuron based on a Euler integration Hodgkin-Huxley Model when a $10\mu A$ applied input current is turned off.}
+\label{fig:5d}
+\end{figure}
 
 \section{Question 6: Oscillations}
 
