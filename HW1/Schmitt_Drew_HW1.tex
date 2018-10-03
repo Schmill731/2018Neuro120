@@ -183,11 +183,44 @@ We change line 19 in \lstinline{simulate_hh.m} to produce Figure \ref{fig:5d}. W
 
 \subsection{Manipulation of $\omega$}
 
+We first run \lstinline{simulate_hh.m} with lines 22-26 uncommented, and see that the resultant firing rate is 50 Hz, which makes sense as the applied input current has a frequency of 50 Hz (which we can see from how omega is calculated in line 25 of the file). To see the effect of manipulating $\omega$, we created the file \lstinline{manipulate_omega.m}, which varies $\omega$ by altering the value of the variable $hz$ from $0$ to $200$ with a step of 5. The code is displayed here:
+\lstinputlisting{manipulate_omega.m}
+From this, we generate Figure \ref{fig:manipulate_omega}, which shows us that the firing rate of the neuron reaches several peaks, which correspond to a frequency of applied input current of around 15, 70-85, 140, and 180 Hz. Beyond 180 Hz frequency of the applied input current, the neuron has a firing rate of 0 Hz.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=1\textwidth]{manipulate_omega.eps}
+\caption{The firing rate of a simulated neuron based on a Euler integration Hodgkin-Huxley Model when a variable applied input current is delivered. The x axis displays the frequency of the applied input current.}
+\label{fig:manipulate_omega}
+\end{figure}
+
 \subsection{Firing Rate Dependence on $I_0$}
+
+We create the file \lstinline{manipulate_I_0.m} to test the firing rate dependence on $I_0$, and again vary $I_0$ from 0 to 200 $\mu A$ with a step of 5 $\mu A$. We provide the code below:
+\lstinputlisting{manipulate_I_0.m}
+This code generates Figure \ref{fig:manipulate_I_0}, which shows us that, in general, the firing rate of the neuron increases with an increase in $I_0$, up until a baseline current of 160 $\mu A$, at which point the firing rate drops to 0 Hz.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=1\textwidth]{manipulate_I_0.eps}
+\caption{The firing rate of a simulated neuron based on a Euler integration Hodgkin-Huxley Model when a variable applied input current is delivered.}
+\label{fig:manipulate_I_0}
+\end{figure}
 
 \subsection{Manipulation of $I_0$}
 
-\section{Question 7: Extra Credit: Leaky Integration}
+We can see from Figure \ref{fig:I_0} that the neuron responds with one spike per oscillation cycle when the baseline current ($I_0$) is $0 \mu A$, which results in a firing rate of 50 Hz. From Figure \ref{fig:manipulate_I_0} and from testing various values of $I_0$, we see that in this range there is no effect of $I_0$ on the firing rate of the neuron. It is only after the baseline current reaches a value of $\sim 25 \mu A$ that it begins to have an effect on the firing rate of the neuron.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=1\textwidth]{I_0.eps}
+\caption{The behavior of a simulated neuron based on a Euler integration Hodgkin-Huxley Model when a baseline current of 0 $\mu A$ is delivered.}
+\label{fig:I_0}
+\end{figure}
+
+
+
+
 
 
 

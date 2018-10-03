@@ -3,11 +3,11 @@ clear all
 %% Configure input current
 
 % Basic step input at t=100
-Iapp = @(t) (t>100)*16;
+% Iapp = @(t) (t>100)*16;
 
 % Two pulses spaced t_sep ms apart
-t_sep = 12;
-Iapp = @(t) (t>10 & t < 12)*10 + (t>10+t_sep & t < 12+t_sep)*10;
+% t_sep = 12;
+% Iapp = @(t) (t>10 & t < 12)*10 + (t>10+t_sep & t < 12+t_sep)*10;
 
 % Step up from 0 to 6.3 microA at t=100
 %Iapp = @(t) (t>0 & t < 100)*0 + 6.3*(t>100);
@@ -18,13 +18,12 @@ Iapp = @(t) (t>10 & t < 12)*10 + (t>10+t_sep & t < 12+t_sep)*10;
 % Step down from 10 to 8 microA at t=100
 %Iapp = @(t) (t>0 & t < 100)*10 + 8*(t>100);
 
-% Sinusoid plus constant amplitude 
-%I0 = 0;
-%I1 = 7;
-%hz = 50;
-%omega = hz/1000*2*pi;
-%Iapp  = @(t) I0 + I1*sin(omega*t);
-
+% Sinusoid plus constant amplitude
+I0 = 0;
+I1 = 7;
+hz = 50;
+omega = hz/1000*2*pi;
+Iapp  = @(t) I0 + I1*sin(omega*t);
 %% Simulate HH dynamics
 use_euler = true;
 
