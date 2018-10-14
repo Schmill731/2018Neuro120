@@ -40,6 +40,8 @@ for i = 1:(length(stimulus_start_times)-1)
     avg_dist = avg_dist+norm;
 end
 plot(x,avg_dist./360)
+xlabel('Time (s)');
+ylabel('Firing Rate (Hz)');
 
 %% Part C
 % sigma = 50ms
@@ -62,4 +64,26 @@ for k = 1:2
         avg_dist = avg_dist+norm;
     end
     plot(x,avg_dist./360)
+    xlabel('Time (s)');
+    ylabel('Firing Rate (Hz)');
 end
+
+%% Part D
+figure(5);
+hold on;
+nbins = length(0:0.005:(1/6))
+neural_data = {spikes_control, spikes_exp};
+total_counts = {zeros(1, nbins), zeros(1, nbins)};
+num_neurons = {N_control, N_exp};
+for condition = 1:2
+    for i = 1:(length(stimulus_start_times)-1)
+        spikes_in_window = neural_data{condition}((neural_data{condition} > ...
+            stimulus_start_times(i)) & (neural_data{condition} < ...
+            stimulus_start_times(i + 1)));
+        spikes_normalized = (spikes_in_window - stimulus_start_times(i))';
+        total_counts{condition} = total_counts{condition} + hist(spikes_normalized, nbins);   
+    end
+    total_counts{condition} = (total_counts{condition}/(360*num_neurons{condition}*.005));
+end
+bar([total_counts{2}', total_counts{1}'])
+
