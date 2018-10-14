@@ -17,3 +17,9 @@ for i = 1:(length(stimulus_start_times)-1)
 end
 xlim([0,0.167])
 ylim([0,360])
+yticks(0:30:360)
+xlabel('Time (s)');
+ylabel('Trial Number');
+title('Response of a Single-Unit to the Exposure Stimulus');
+
+% Create gaussian filter
