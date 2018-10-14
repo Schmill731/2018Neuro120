@@ -23,3 +23,21 @@ ylabel('Trial Number');
 title('Response of a Single-Unit to the Exposure Stimulus');
 
 % Create gaussian filter
+figure(2);
+x=[0:0.0001:1/6];
+avg_dist = zeros(1,length(x));
+for i = 1:(length(stimulus_start_times)-1)
+    spikes_in_window = spikes_single_unit((spikes_single_unit > ...
+        stimulus_start_times(i)) & (spikes_single_unit < ...
+        stimulus_start_times(i + 1)));
+    spikes_normalized = (spikes_in_window - stimulus_start_times(i))';
+    trial_num = ones(1, length(spikes_normalized))*i;
+    norm = zeros(1,length(x));
+    for j=1:length(spikes_normalized)
+        
+        norm = norm + normpdf(x,spikes_normalized(j),0.005);
+    end 
+    avg_dist = avg_dist+norm;
+end
+avg_dist./360;
+plot(x,avg_dist)
