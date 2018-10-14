@@ -44,7 +44,7 @@ xlabel('Time (s)');
 ylabel('Firing Rate (Hz)');
 
 %% Part C
-% sigma = 50ms
+% sigma = 50ms, 0.5ms
 sigma = [0.05,0.0005]
 for k = 1:2
     figure(k+2);
@@ -58,7 +58,6 @@ for k = 1:2
         trial_num = ones(1, length(spikes_normalized))*i;
         norm = zeros(1,length(x));
         for j=1:length(spikes_normalized)
-
             norm = norm + normpdf(x,spikes_normalized(j),sigma(k));
         end 
         avg_dist = avg_dist+norm;
