@@ -39,5 +39,4 @@ for i = 1:(length(stimulus_start_times)-1)
     end 
     avg_dist = avg_dist+norm;
 end
-avg_dist./360;
-plot(x,avg_dist)
+plot(x,avg_dist./360)
