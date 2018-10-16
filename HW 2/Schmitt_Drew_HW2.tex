@@ -55,15 +55,46 @@
 
 To plot the raster plot, we wrote the following code:
 \lstinputlisting[firstline=5, lastline=23]{exposure_stimulus_investigation.m} 
-This produces the raster plot shown in Figure \ref{fig:RasterPlot}, which shows clearly that the neuron responds consistently to the stimulus about 0.03 seconds into the start of the trial.
+This produces the raster plot shown in Figure \ref{fig:RasterPlot}, which clearly shows that the neuron responds consistently to the stimulus about 0.03 seconds into the start of the trial.
 
-\begin{figure}
+\begin{figure}[ht!]
 \includegraphics[width=1\textwidth]{RasterPlot.eps}
-\caption{Raster Plot of Single-Unit Activity}
+\caption{Raster Plot of Single-Unit Activity.}
 \label{fig:RasterPlot}
 \end{figure}
 
-\subsection{
+\subsection{Gaussian Kernel Firing Rate Estimate}
+
+We calculate the estimate of the firing rate of this single-unit neuron by writing the following code:
+\lstinputlisting[firstline=24, lastline=44]{exposure_stimulus_investigation.m}
+This code simply places a Gaussian distribution with a standard deviation of 0.005s centered at the location of each spike and averages these distributions over all stimulus trials. This work produces Figure \ref{fig:Gaussian}, which shows that the firing rate increases dramatically around 0.03s into the trial, going from a baseline firing rate of about 5 Hz to a peak of just over 25 Hz. 
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{fivemillisecondplot.eps}
+\caption{Gaussian Estimation of Firing Rate Using $\sigma = 0.005s$.}
+\label{fig:Gaussian}
+\end{figure}
+
+\subsection{Gaussian Kernel Parameter Variation}
+
+We next alter the $\sigma$ parameter of the Gaussian kernel from above and generate Figures \ref{fig:point5ms} and \ref{fig:50ms} which shows the effect of this change. We used the following code to make these figures.
+\lstinputlisting[firstline=46, lastline=68]{exposure_stimulus_investigation.m}
+We can see from these figures that a very small standard deviation results in a 
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{halfmillisecondplot.eps}
+\caption{Gaussian Estimation of Firing Rate Using $\sigma = 0.0005s$.}
+\label{fig:point5ms}
+\end{figure}
+
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{fiftymillisecondplot.eps}
+\caption{Gaussian Estimation of Firing Rate Using $\sigma = 0.05s$.}
+\label{fig:50ms}
+\end{figure}
+
+
 
 
 \end{document}
