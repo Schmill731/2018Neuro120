@@ -294,5 +294,49 @@ set(gca, 'YLim', [-1.5 1.5])
 
 text(-pi,[.1 0.7]*get(gca,'YLim')',sprintf('MSE for Regularization: %g ', mean_squared_error))
 
+% Set up parameters
+N = 40; % Number of training samples
+epsilon = 0.2; % Amount of label noise
+Nh = 500;
+lambda = 1/exp(4);
+
+% Make dataset
+target_fn = @(t) sin(t);
+x = linspace(-pi,pi,N);
+y = target_fn(x) + epsilon*randn(size(x));
+
+Ntest = 100;
+x_test = linspace(-pi,pi,Ntest);
+y_test = target_fn(x_test);
+
+Ni = 2;
+
+% Compute network activity
+
+J = randn(Nh,Ni)/Nh;
+
+h = J*[x; ones(1,N)];
+h(h<0)=0;
+
+h_test = J*[x_test; ones(1,Ntest)];
+h_test(h_test<0)=0;
+
+
+% Now train linear regression to map from h to y
+
+w = y*h'*pinv(h*h' + lambda*eye(size(h, 1)));
+
+y_pred = w*h_test;
+
+mean_squared_error = norm(y_test-y_pred).^2;
+
+
+hold on
+plot(x_test,y_pred)
+set(gca, 'YLim', [-1.5 1.5])
+
+text(-pi,[.1 0.6]*get(gca,'YLim')',sprintf('MSE for Regularization and Noise: %g ', mean_squared_error))
+
 legend('Training data, no noise','Test data, no noise', 'Prediction: No Noise', ...
-    'Training data, no noise','Test data, no noise','Prediction: Noise', 'Prediction: Regularization')
+    'Training data, no noise','Test data, no noise','Prediction: Noise', ...
+    'Prediction: Regularization, No Noise', 'Regularization, Noise')
