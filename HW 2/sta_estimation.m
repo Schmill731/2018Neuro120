@@ -30,5 +30,5 @@ colorbar;
 
 %% Plot stimulus correlation matrix
 figure(3);
-plot_spectrogram(stim_spectrogram*stim_spectrogram');
+plot_spectrogram(stim_spectrogram*stim_spectrogram', 38, stim_freq);
 colorbar;
