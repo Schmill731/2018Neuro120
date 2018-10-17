@@ -85,4 +85,9 @@ for condition = 1:2
     total_counts{condition} = (total_counts{condition}/(360*num_neurons{condition}*.005));
 end
 bar([total_counts{2}', total_counts{1}'])
+legend('Experimental Group', 'Control Group')
+xlabel('Time (s)')
+ylabel('Number of Spikes')
+xticks(1:2:nbins)
+xticklabels(0:0.01:(1/6))
 
