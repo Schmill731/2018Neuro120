@@ -4,11 +4,9 @@ clear all
 load dmr_experiment
 
 % Plot spectrogram of stimulus
-figure(1)
 plot_spectrogram(stim_spectrogram, stim_time, stim_freq)
 
 %% Generate STA
-figure(2)
 t_past = 125; % in ms
 t_future = 125; % in ms
 sampling_rate = mean(median(diff(stim_time)));
@@ -28,7 +26,6 @@ sta_spectro = sta_spectro/982;
 plot_spectrogram(sta_spectro, sta_time, sta_freq)
 colorbar;
 
-%% Plot stimulus correlation matrix
+% Plot stimulus correlation matrix
 figure(3);
-plot_spectrogram(stim_spectrogram*stim_spectrogram', 38, stim_freq);
-colorbar;
+plot_spectrogram(stim_spectrogram*stim_spectrogram', 38, stim_freq)
