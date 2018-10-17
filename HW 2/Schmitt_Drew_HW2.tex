@@ -81,7 +81,7 @@ This code simply places a Gaussian distribution with a standard deviation of 0.0
 
 We next alter the $\sigma$ parameter of the Gaussian kernel from above and generate Figures \ref{fig:point5ms} and \ref{fig:50ms} which shows the effect of this change. We used the following code to make these figures.
 \lstinputlisting[firstline=46, lastline=68]{exposure_stimulus_investigation.m}
-We can see from these figures that a very small standard deviation results in a
+We can see from these figures that a very small standard deviation results in a quite noisy curve with large, quick oscillations, which intuitively, does not seem to describe the behavior of the neuron well as it is unlikely the firing rate would change that quickly. Conversely, a very large standard deviation results in a very smooth, wide curve that also does not seem to describe the data well as it predicts a large firing rate at the start of the experiment, where the raster plot indicates there is very little activity.
 
 \begin{figure}[ht!]
 \includegraphics[width=1\textwidth]{halfmillisecondplot.eps}
@@ -95,6 +95,65 @@ We can see from these figures that a very small standard deviation results in a
 \caption{Gaussian Estimation of Firing Rate Using $\sigma = 0.05s$.}
 \label{fig:50ms}
 \end{figure}
+
+\subsection{Grand Average Post-Stimulus Time Histogram}
+We compute the grand average poststimulus time histogram using the following code:
+\lstinputlisting[firstline=70, lastline=87]{exposure_stimulus_investigation.m}
+This code generates Figure \ref{fig:PSTH}, which shows us the same trend we saw in the previous figures. The stimulus evokes a larger response from the population of neurons about 0.03 seconds after the onset of a trial.
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{Q1PD.eps}
+\caption{Grand Average Post-Stimulus Time Histogram of two Populations of Neurons. Bin width was 5ms.}
+\label{fig:PSTH}
+\end{figure}
+
+\subsection{Differences between Experimental and Control Groups}
+
+Looking at Figure \ref{fig:PSTH}, we see that the experimental group has a stronger response (i.e. more spikes)
+during the peak firing activity (about 0.02s to 0.05s after the onset of the trial) of the neurons. However, the control neuron population still exhibits this increase, so therefore it is just that the experimental group of neurons became more selective to the exposure stimulus while the precision of the response did not appear to change. Finally, we can see that there is very little difference in the activity of the two groups (beyond some higher activity in the control group at the start and end of a trial) outside of this peak firing range.
+
+\subsection{Spike-Triggered Average for Neuron}
+
+\subsection{Frequency Selectivity of Neuron}
+
+\subsection{Neuronal Stimulus Preference}
+
+\subsection{Potential Stimulus Correlations}
+
+\section{Random Neural Networks and Overfitting in Regression}
+
+\subsection{Linear Regression with Regularization}
+
+\subsection{Overdetermined Networks}
+
+\subsection{Underdetermined Networks}
+
+\subsection{Label Noise and Regularization Parameters}
+
+\subsection{Reflections}
+
+\section{Image Demixing}
+
+\subsection{Covariance Matrix and PCA}
+
+\subsubsection{De-meaning the data}
+
+\subsubsection{Covariance Matrix Function}
+
+\subsubsection{Eigenvectors and values of covariance matrix}
+
+\subsubsection{Time Required for Computation}
+
+\subsection{Whitening the Data}
+
+\subsection{ICA}
+
+\subsubsection{Mixed Images}
+
+\subsubsection{Whitening mixed images}
+
+\subsubsection{Results of ICA}
+
 
 
 
