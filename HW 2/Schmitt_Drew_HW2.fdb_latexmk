@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1539736894 "Schmitt_Drew_HW2.tex" "Schmitt_Drew_HW2.pdf" "Schmitt_Drew_HW2" 1539736895
+["pdflatex"] 1539738167 "Schmitt_Drew_HW2.tex" "Schmitt_Drew_HW2.pdf" "Schmitt_Drew_HW2" 1539738167
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1480098698 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1480098698 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -165,8 +165,8 @@
   "/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1495593472 2350277 a699055bee05bf8a40b0504752487295 ""
   "/usr/local/texlive/2017/texmf-var/web2c/pdftex/pdflatex.fmt" 1495593487 4129592 0e6cfee100d68e6d96b92c0258f2ff73 ""
   "/usr/local/texlive/2017/texmf.cnf" 1495593465 577 2b71d4d888f9e5560b2e99985915a9fa ""
-  "Schmitt_Drew_HW2.aux" 1539736895 4220 1d11cac002246b0c3ae64491bc30de3c ""
-  "Schmitt_Drew_HW2.tex" 1539736893 6550 3239d06b7d3cd58285ae51416fb02986 ""
+  "Schmitt_Drew_HW2.aux" 1539738167 4454 93a548d65940c7b975b10db87a6644de ""
+  "Schmitt_Drew_HW2.tex" 1539738166 7308 7c05b610d453f45d389024e25503c80b ""
   "exposure_stimulus_investigation.m" 1539736327 3107 f2d005c37c4a33aa815a845d5e975000 ""
   "images/Q1PD.eps" 1539736327 28466 20bf3c015172ea010aa2796855374c89 ""
   "images/RasterPlot.eps" 1539542603 30804 67a12bb493e05bbc9b930256d35b300c ""
@@ -174,8 +174,9 @@
   "images/fivemillisecondplot.eps" 1539732995 44309 1ae90d2f2413aeefb30d2942a7f99db0 ""
   "images/halfmillisecondplot.eps" 1539732995 44381 08612e4d4be7aae6c7ce14d9b53ea8f0 ""
   "images/sta_spectro.eps" 1539735733 25997 ba93066f95a996d6de494c2e73895c0b ""
-  "sta_estimation.m" 1539736047 812 b39bcdc6db6b511b34eb3a562678a63b ""
+  "images/stimulus_correlation.eps" 1539738064 27137 8f6171aafa7e97df351fab2d28780ef1 ""
+  "sta_estimation.m" 1539736978 827 21a14f73e0403bd57716640fa0bb50f8 ""
   (generated)
+  "Schmitt_Drew_HW2.log"
   "Schmitt_Drew_HW2.aux"
   "Schmitt_Drew_HW2.pdf"
-  "Schmitt_Drew_HW2.log"

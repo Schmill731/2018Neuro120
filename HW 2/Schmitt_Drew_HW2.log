@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  16 OCT 2018 20:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.5.23)  16 OCT 2018 21:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -861,32 +861,53 @@ File: images/sta_spectro-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: images/sta_spectro-eps-converted-to.pdf used on input 
 line 123.
 (pdftex.def)             Requested size: 469.75502pt x 352.31299pt.
- [7]
-Overfull \vbox (303.99266pt too high) has occurred while \output is active []
+ [7] (./sta_estimation.m)
+Package epstopdf Info: Source file: <images/stimulus_correlation.eps>
+(epstopdf)                    date: 2018-10-16 21:01:04
+(epstopdf)                    size: 27137 bytes
+(epstopdf)             Output file: <images/stimulus_correlation-eps-converted-
+to.pdf>
+(epstopdf)                    date: 2018-10-16 21:02:20
+(epstopdf)                    size: 13688 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/stimulus_correlatio
+n-eps-converted-to.pdf images/stimulus_correlation.eps>
+(epstopdf)             \includegraphics on input line 143.
+Package epstopdf Info: Output file is already uptodate.
+
+<images/stimulus_correlation-eps-converted-to.pdf, id=68, 562.1pt x 421.575pt>
+File: images/stimulus_correlation-eps-converted-to.pdf Graphic file (type pdf)
+
+<use images/stimulus_correlation-eps-converted-to.pdf>
+Package pdftex.def Info: images/stimulus_correlation-eps-converted-to.pdf used 
+on input line 143.
+(pdftex.def)             Requested size: 469.75502pt x 352.31299pt.
+ [8 <./images/sta_spectro-eps-converted-to.pdf>]
+Overfull \vbox (216.37709pt too high) has occurred while \output is active []
 
 
-[8 <./images/sta_spectro-eps-converted-to.pdf>] (./Schmitt_Drew_HW2.aux) ) 
+[9 <./images/stimulus_correlation-eps-converted-to.pdf>]
+(./Schmitt_Drew_HW2.aux) ) 
 Here is how much of TeX's memory you used:
- 16975 strings out of 492995
- 332702 string characters out of 6132704
- 422720 words of memory out of 5000000
- 20144 multiletter control sequences out of 15000+600000
+ 16983 strings out of 492995
+ 332986 string characters out of 6132704
+ 421720 words of memory out of 5000000
+ 20149 multiletter control sequences out of 15000+600000
  11520 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,6n,72p,572b,1558s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr
-/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/
-local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/l
-ocal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/lo
-cal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/loca
-l/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/
-texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/te
-xlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/tex
-live/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Schmitt_Drew_HW2.pdf (8 pages, 199363 bytes).
+</usr/local/texlive/2017/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr17.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmtt10.pfb>
+Output written on Schmitt_Drew_HW2.pdf (9 pages, 211279 bytes).
 PDF statistics:
- 107 PDF objects out of 1000 (max. 8388607)
- 73 compressed objects within 1 object stream
+ 118 PDF objects out of 1000 (max. 8388607)
+ 79 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 43 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 48 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -127,9 +127,24 @@ This code generates Figure \ref{fig:sta_spectro}, which plots the spike-triggere
 
 \subsection{Frequency Selectivity of Neuron}
 
+The neuron appears to be most sensitive to a frequency of 7127 Hz.
+
 \subsection{Neuronal Stimulus Preference}
 
+According to the STA, the neuron's peak response would be higher to a brief tone pip. This is because if the neurons were responsive to constant tones, we would expect longer stretches of spikes instead of short bursts. The tone pip should be about 30ms long to evoke the largest response.
+
 \subsection{Potential Stimulus Correlations}
+
+We plot the stimulus correlation matrix using the following code:
+\lstinputlisting[firstline=31, lastline=34]{sta_estimation.m}
+This code generates Figure \ref{fig:stim_corr}, which appears to be close to an identity matrix.
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{stimulus_correlation.eps}
+\caption{Spectrogram of stimulus correlation matrix.}
+\label{fig:stim_corr}
+\end{figure}
+
 
 \section{Random Neural Networks and Overfitting in Regression}
 
