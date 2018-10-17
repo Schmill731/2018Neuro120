@@ -124,9 +124,39 @@ during the peak firing activity (about 0.02s to 0.05s after the onset of the tri
 
 \subsection{Linear Regression with Regularization}
 
+We implement linear regression with regularization in Matlab as follows:
+\lstinputlisting[firstline=1, lastline=59]{nn_regression.m}
+This produces Figure \ref{fig:regression} which shows us how this network performs on test data. We see from this data that the 26 neuron model performed the best (as measured by mean squared error and visual inspection of the curve it makes), while the 10 neuron model performed reasonably well, but with some more error. Finally, the 2 neuron model performed the worst of all and has quite the large error.
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{Q2PartA.eps}
+\caption{Performance of Simple Linear Regression with varying numbers of neurons}
+\label{fig:regression}
+\end{figure}
+
 \subsection{Overdetermined Networks}
 
+We implement the overdetermined network scenario as follows:
+\lstinputlisting[firstline=61, lastline=108]{nn_regression.m}
+This code produces Figure \ref{fig:overdetermined}, which shows us what happens in the overdetermined network scenario. We see from this figure that the network is quite unstable throughout this size range. Indeed, the mean squared error is quite low for networks with less than 10 neurons, 15 neurons, or 25 neurons. However, the mean squared error is astronomically high for values close to this: networks with 12, 21, and 22 neurons. Thus, we see that when the model is too small, the mean squared error might be low, but the predictions don't map neatly onto the ``ideal'' function we are approximating (as seen in Figure \ref{fig:regression}). However, when the model is too big, the mean squared error is quite large and the model likely fits the data too well such that it cannot generalize to new test data.
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{Q2PartB.eps}
+\caption{Mean-Squared Error as a Function of Network Size for the Over-Determined Situation.}
+\label{fig:overdetermined}
+\end{figure}
+
 \subsection{Underdetermined Networks}
+
+We implement the underdetermined network scenario as follows:
+\lstinputlisting[firstline=110, lastline=157]{nn_regression.m}
+This code produces Figure \ref{fig:underdetermined}, which we see produces a low mean-squared error for large network sizes. Thus, based on this figure, we would guess that the best network size is approximately 110 neurons or so (as the mean squared error seems to plateau after this). The performance of these big networks is not as variable as the smaller networks.
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{Q2PartC.eps}
+\caption{Mean-Squared Error as a Function of Network Size for the Under-Determined Situation.}
+\label{fig:underdetermined}
+\end{figure}
 
 \subsection{Label Noise and Regularization Parameters}
 
