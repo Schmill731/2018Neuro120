@@ -1,6 +1,6 @@
 %% Part A
 clear all
-load('problem3code/toWhiten.mat')
+load('toWhiten.mat')
 
 % Part i
 demeaned = remove_mean(toWhiten);
@@ -46,7 +46,7 @@ scatter(ouput(:, 1), ouput(:, 2))
 
 % Plot images
 clear all
-load('problem3code/mixedImg.mat');
+load('mixedImg.mat');
 plotImgs(imMix);
 
 % Whiten Images
@@ -57,7 +57,12 @@ plotImgs(whitened_images);
 % Find separate images
 weights = learnWeights(whitened_images);
 final = whitened_images*weights;
+plotImgs(final);
 
+% Training on un-whitened images
+weights=learnWeights(imMix);
+final=imMix*weights;
+plotImgs(final);
 
 %% Part A Functions
 function output = remove_mean(matrix)

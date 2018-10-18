@@ -14,7 +14,6 @@
 \usetikzlibrary{matrix,chains,positioning,decorations.pathreplacing,arrows}
 \usepackage{wrapfig}
 \usepackage{epstopdf}
-% \usepackage[outdir=./]{epstopdf}
 
 \graphicspath{ {images/} }
 
@@ -208,23 +207,162 @@ Based on these results, it makes some sense for neural networks to massively exp
 
 \subsubsection{De-meaning the data}
 
+We write the following Matlab function to remove the mean from a data matrix:
+\lstinputlisting[firstline=62, lastline=65]{problem3code/problem3.m}
+We then check this code using the built in mean function in Matlab to ensure that it works as expected. This code is shown below:
+\lstinputlisting[firstline=1, lastline=7]{problem3code/problem3.m}
+This code returns a value of 0 (or very close to 0, which occurs due to rounding error and floating-point imprecision) for each column of the matrix as expected.
+
 \subsubsection{Covariance Matrix Function}
+
+We then computed the covariance matrix by creating the custom function below:
+\lstinputlisting[firstline=67, lastline=69]{problem3code/problem3.m}
+We then tested this code with the following, which showed us that this covariance function works the same as the in-built function:
+\lstinputlisting[firstline=9, lastline=11]{problem3code/problem3.m}
+
 
 \subsubsection{Eigenvectors and values of covariance matrix}
 
+We use the built-in eig function in Matlab to calculate the principal components (code shown below), which are shown on Figure \ref{fig:PCs}. Note that the PCs are each magnified by 5 times so we can see how they overlay on the data (as the direction, not the magnitude, of the PCs are important for this section).
+\lstinputlisting[firstline=13, lastline=17]{problem3code/problem3.m}
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{pcs.eps}
+\caption{The Principal Components of the toWhiten data overlaid on the data itself.}
+\label{fig:PCs}
+\end{figure}
+
 \subsubsection{Time Required for Computation}
 
+We can see that the covariance matrix is just a $2 \times 2$ matrix, so we can intuitively understand that the conditions leading to a long runtime for diagonalization of the covariance matrix will be data with large dimensions. That is, the runtime scales as a factor of the number of dimensions, D, not necessarily of the number of data points (as the number of data points is just used to calculate the covariance matrix, which is a fast operation). We can see this by running the following code on an early-2015 Macbook Pro with 8 GB RAM:
+\lstinputlisting[firstline=19, lastline=39]{problem3code/problem3.m}
+This gives us the following values for the various cases:
+
+\begin{tabular}{|c|c|c|}
+\hline
+Type of Matrix & Covariance Method & SVD Method \\
+\hline
+$ 1000 \times 5000$ & 21.9225s &  3.6852s \\
+\hline
+$ 5000 \times 1000$ & 0.4502s & 3.0704s \\
+\hline
+\end{tabular}
+
+As we can see from this, the SVD method, for large covariances matrices, is faster. Further, it confirms the above by showing us that a large covariance matrix increases the runtime.
+
 \subsection{Whitening the Data}
+
+We whitened the data as follows:
+\lstinputlisting{problem3code/whiten_data.m}
+We then tested this function on the toWhiten dataset, by running the following code:
+\lstinputlisting[firstline=41, lastline=43]{problem3code/problem3.m}
+This produces Figure \ref{fig:whitenedData}, which shows us that the data has been properly rotated or whitened.
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{whitenData.eps}
+\caption{Whitened toWhiten Data.}
+\label{fig:whitenedData}
+\end{figure}
+
+We can see from this that the principal components are now just the x and y axes, so to extract these from the whitened data, we need only take vectors that describe each axis (i.e. $(0, 1)$ and $(1, 0)$).
+
 
 \subsection{ICA}
 
 \subsubsection{Mixed Images}
 
+We plotted the three images using the below commands:
+\lstinputlisting[firstline=45, lastline=50]{problem3code/problem3.m}
+This generates Figure \ref{fig:img1}, \ref{fig:img2}, and \ref{fig:img3}, which we can see look like forest scenes overlaid on one another.
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{img1.eps}
+\caption{Unwhitened Version of Image 1}
+\label{fig:img1}
+\end{figure}
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{img2.eps}
+\caption{Unwhitened Version of Image 2}
+\label{fig:img2}
+\end{figure}
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{img3.eps}
+\caption{Unwhitened Version of Image 3}
+\label{fig:img3}
+\end{figure}
+
 \subsubsection{Whitening mixed images}
+
+We then whiten the images using the following code:
+\lstinputlisting[firstline=52, lastline=54]{problem3code/problem3.m}
+This produces the following whitened images shown in Figure \ref{fig:Wimg1}, \ref{fig:Wimg2}, and \ref{fig:Wimg3}.
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{Wimg1.eps}
+\caption{Whitened Version of Image 1}
+\label{fig:Wimg1}
+\end{figure}
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{Wimg2.eps}
+\caption{Whitened Version of Image 2}
+\label{fig:Wimg2}
+\end{figure}
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{Wimg3.eps}
+\caption{Whitened Version of Image 3}
+\label{fig:Wimg3}
+\end{figure}
+
 
 \subsubsection{Results of ICA}
 
+We then learned a transformation to separate the images using the code that follows:
+\lstinputlisting[firstline=57, lastline=65]{problem3code/problem3.m}
+This generates the following images, which we can see are better in the case where the whitened data was trained:
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{Wimg1final.eps}
+\caption{ICA of Whitened Image 1}
+\label{fig:ICAWimg1}
+\end{figure}
 
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{Wimg2final.eps}
+\caption{ICA of Whitened Image 2}
+\label{fig:ICAWimg2}
+\end{figure}
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{Wimg3final.eps}
+\caption{ICA of Whitened Image 3}
+\label{fig:ICAWimg3}
+\end{figure}
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{img1final.eps}
+\caption{ICA of Image 1}
+\label{fig:ICAimg1}
+\end{figure}
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{img2final.eps}
+\caption{ICA of Image 2}
+\label{fig:ICAimg2}
+\end{figure}
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{img3final.eps}
+\caption{ICA of Image 3}
+\label{fig:ICAimg3}
+\end{figure}
+
+
+\section{Mathematics of Regression}
+
+This portion of the assignment was submitted separately.
 
 
 
