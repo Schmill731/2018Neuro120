@@ -13,7 +13,7 @@ colormap gray
 
 %% Create and plot DoG filter
 
-%dog = ???
+dog = fspecial('gaussian', [51 51], 3) - fspecial('gaussian', [51 51], 7);
 surf(dog)
 
 %% Convolve image and plot the result
