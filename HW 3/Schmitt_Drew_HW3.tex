@@ -92,20 +92,96 @@ We convolve the checkerboard illusion with the filter from part A via the follow
 \label{fig:checkConv}
 \end{figure}
 
-\subsection{Checkerboard Illusion with a Broader Filter}
+\subsection{Checkerboard Illusion with a Narrower Filter}
 
-We make a new difference of Gaussians filter with the following code: \lstinline{dog3 = fspecial('gaussian', [51 51], 3) - fspecial('gaussian', [51 51], 7);}. We plotted this with \lstinline{surf(dog3)} to produce the following image in Figure \ref{fig:dog3}. We then convolve the checkerboard illusion with this filter via the following code: \lstinline{res = conv2(im_cb, dog3, 'valid');}. This produces Figure \ref{fig:checkConv2}. We can see from this figure that 
+We make a new difference of Gaussians filter with the following code: \lstinline{dog3 = fspecial('gaussian', [51 51], 3) - fspecial('gaussian', [51 51], 7);}. We plotted this with \lstinline{surf(dog3)} to produce the following image in Figure \ref{fig:dog3}. We then convolve the checkerboard illusion with this filter via the following code: \lstinline{res = conv2(im_cb, dog3, 'valid');}. This produces Figure \ref{fig:checkConv2}. We can see from this figure that the intersections of the stripes are the same color as the stripes themselves, which explains why when we focus on a certain intersection, the gray circle appears to disappear. The RGCs in our fovea, which are modeled here, are not tricked by the illusion.
 
 \begin{figure}[ht!]
 \includegraphics[width=1\textwidth]{dog3.eps}
-\caption{The coefficients of a broader difference of Gaussians filter.}
+\caption{The coefficients of a narrower difference of Gaussians filter.}
 \label{fig:dog3}
 \end{figure}
 
 \begin{figure}[ht!]
 \includegraphics[width=1\textwidth]{check_dog3_conv.eps}
-\caption{The result of convolving the checkerboard illusion image with a broader filter.}
+\caption{The result of convolving the checkerboard illusion image with a narrower filter.}
 \label{fig:checkConv2}
 \end{figure}
+
+\subsection{Peppers}
+
+We convolved the pepper image with both the filter from part A and that from part E via the following code:
+\lstinputlisting[firstline=71, lastline=79]{earlyvision.m}.
+This produces Figures \ref{fig:pepper_broad} and \ref{fig:pepper_narrow}. We can see from these figures that in the image convolved with the broader filter (from Part A), the gross gradient differences between the peppers is preserved. Further, one can distinguish (somewhat) some peppers from others, though the acuity of an individual pepper is low. However, with the narrower filter, the gradient information is lost (i.e. we can't tell which peppers are darker and which are lighter), but we can make out fine details on each pepper (i.e. the lines of the onion).
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{peppers_dog_conv.eps}
+\caption{The result of convolving the peppers image with the original filter from part A.}
+\label{fig:pepper_broad}
+\end{figure}
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{peppers_dog3_conv.eps}
+\caption{The result of convolving the peppers image with the narrower filter from part E.}
+\label{fig:pepper_narrow}
+\end{figure}
+
+For the reader, we reproduce our entire code used for this question below before moving on to the next question:
+\lstinputlisting{earlyvision.m}
+
+\section{Invariance and Representational Similarity in Deep Neural Networks}
+
+\subsection{AlexNet Filters}
+
+We plot the weights of the AlexNet filters using the code below and show the result in Figure \ref{fig:AlexWeights}. 
+\lstinputlisting[firstline=1, lastline=23]{deepnet_invariance.m}
+
+We can see from this that there are several neurons that respond to oriented lines/bars as well as edges. These oriented bars are of various widths. There are also a few neurons that respond to circular edges in its receptive field (though these edges do not have to lie entirely within the receptive field). 
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{alex_weights.eps}
+\caption{The weights of the first convolutional layer of AlexNet.}
+\label{fig:AlexWeights}
+\end{figure}
+
+\subsection{Applying the Network to Peppers}
+
+We apply the network to the peppers image with the following code:
+\lstinputlisting[firstline=24, lastline=29]{deepnet_invariance.m}
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{peppers_classify.eps}
+\caption{The result of running an image through AlexNet.}
+\label{fig:pepClassified}
+\end{figure}
+
+This produces Figure \ref{fig:pepClassified}, which we can see correctly classifies the image as a bell pepper (to be fair, there are multiple bell peppers within the image, but the network wasn't trained to report how many peppers there are). We then plot the activity of the neurons in the first convolution layer using the following code:
+\lstinputlisting[firstline=31, lastline=52]{deepnet_invariance.m}
+
+From our investigation of the neurons in this layer, the activity of filters 3, 10, and 59 are of interest and are plotted in Figures \ref{fig:f3}, \ref{fig:f10}, and \ref{fig:f59}. From these figures, we can see that filter 3 is selective for the rough outlines of the peppers (it is certainly not 100\% accurate or does so in extreme detail). Conversely, filter 10 is selectively for the bodies of the peppers, particularly those that are warm-colored. \textbf{IDEFK WHAT FILTER 59 IS SELECTIVE FOR}.
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{filter3.eps}
+\caption{The activity of filter 3 in the first convolutional layer when running the pepper image through AlexNet.}
+\label{fig:f3}
+\end{figure}
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{filter10.eps}
+\caption{The activity of filter 10 in the first convolutional layer when running the pepper image through AlexNet.}
+\label{fig:f10}
+\end{figure}
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{filter59.eps}
+\caption{The activity of filter 59 in the first convolutional layer when running the pepper image through AlexNet.}
+\label{fig:f59}
+\end{figure}
+
+\subsection{Translation Invariance of AlexNet}
+
+We plot the correlation between activations for the original image and the image translated to the right by amounts 
+
+
 
 \end{document}
