@@ -70,10 +70,6 @@ colormap gray
 
 %% Convolve and plot the result
 
-res = conv2(im_natural, dog, 'valid')
-imagesc(res)
-colormap gray
-pause
-res = conv2(im_natural, dog3, 'valid')
+res = ???
 imagesc(res)
 colormap gray
