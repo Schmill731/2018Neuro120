@@ -62,7 +62,7 @@ clear act_corr
 im_num = 41; % German shephard image number.
 im = images(:,:,:,im_num);
 
-layers = {'data','conv1','pool1','conv5','pool5','fc7','prob'}
+layers = {'data','conv1','pool1','conv5','pool5','fc7','prob'};
 
 % translate image
 translations = 0:5:180;
@@ -89,7 +89,7 @@ clear act_corr
 im_num = 41; % German shephard
 im = images(:,:,:,im_num);
 
-layers = {'data','conv1','pool1','conv5','pool5','fc7','prob'}
+layers = {'data','conv1','pool1','conv5','pool5','fc7','prob'};
 
 % rotate image
 rotations = 0:5:180;
@@ -122,7 +122,7 @@ for i = 1:length(layers)
     caxis([0 1])
     axis square
 
-    d_data = RDM1; % Plot experimental RDM
+    d_data = RDM2; % Plot experimental RDM
     subplot(132)
     imagesc(d_data)
     caxis([0 1])

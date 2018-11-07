@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  7 NOV 2018 10:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  7 NOV 2018 11:32
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1004,8 +1004,98 @@ File: images/filter59-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: images/filter59-eps-converted-to.pdf used on input lin
 e 175.
 (pdftex.def)             Requested size: 469.75502pt x 352.31299pt.
- [12 <./images/filter3-eps-converted-to.pdf>] (./backprop.m [13 <./images/filte
-r10-eps-converted-to.pdf>] [14 <./images/filter59-eps-converted-to.pdf>] [15])
+ [12 <./images/filter3-eps-converted-to.pdf>] (./deepnet_invariance.m [13 <./im
+ages/filter10-eps-converted-to.pdf>]) [14 <./images/filter59-eps-converted-to.p
+df>]
+Package epstopdf Info: Source file: <images/trans_invar.eps>
+(epstopdf)                    date: 2018-11-07 11:10:01
+(epstopdf)                    size: 20806 bytes
+(epstopdf)             Output file: <images/trans_invar-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-11-07 11:11:54
+(epstopdf)                    size: 8441 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/trans_invar-eps-con
+verted-to.pdf images/trans_invar.eps>
+(epstopdf)             \includegraphics on input line 187.
+Package epstopdf Info: Output file is already uptodate.
+
+<images/trans_invar-eps-converted-to.pdf, id=165, 562.1pt x 421.575pt>
+File: images/trans_invar-eps-converted-to.pdf Graphic file (type pdf)
+
+<use images/trans_invar-eps-converted-to.pdf>
+Package pdftex.def Info: images/trans_invar-eps-converted-to.pdf used on input 
+line 187.
+(pdftex.def)             Requested size: 469.75502pt x 352.31299pt.
+ (./deepnet_invariance.m [15 <./images/trans_invar-eps-converted-to.pdf>])
+Package epstopdf Info: Source file: <images/rot_invar.eps>
+(epstopdf)                    date: 2018-11-07 11:17:58
+(epstopdf)                    size: 20825 bytes
+(epstopdf)             Output file: <images/rot_invar-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-11-07 11:18:31
+(epstopdf)                    size: 8484 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/rot_invar-eps-conve
+rted-to.pdf images/rot_invar.eps>
+(epstopdf)             \includegraphics on input line 199.
+Package epstopdf Info: Output file is already uptodate.
+
+<images/rot_invar-eps-converted-to.pdf, id=174, 562.1pt x 421.575pt>
+File: images/rot_invar-eps-converted-to.pdf Graphic file (type pdf)
+
+<use images/rot_invar-eps-converted-to.pdf>
+Package pdftex.def Info: images/rot_invar-eps-converted-to.pdf used on input li
+ne 199.
+(pdftex.def)             Requested size: 469.75502pt x 352.31299pt.
+ (./deepnet_invariance.m
+Overfull \hbox (2.74086pt too wide) in paragraph at lines 116--118
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]  
+ []
+
+[16])
+
+LaTeX Warning: Reference `fig:corrHuman' on page 17 undefined on input line 208
+.
+
+[17 <./images/rot_invar-eps-converted-to.pdf>]
+Package epstopdf Info: Source file: <images/corrMonkey.eps>
+(epstopdf)                    date: 2018-11-07 11:26:22
+(epstopdf)                    size: 16884 bytes
+(epstopdf)             Output file: <images/corrMonkey-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-11-07 11:28:51
+(epstopdf)                    size: 6343 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/corrMonkey-eps-conv
+erted-to.pdf images/corrMonkey.eps>
+(epstopdf)             \includegraphics on input line 211.
+Package epstopdf Info: Output file is already uptodate.
+
+<images/corrMonkey-eps-converted-to.pdf, id=187, 562.1pt x 421.575pt>
+File: images/corrMonkey-eps-converted-to.pdf Graphic file (type pdf)
+
+<use images/corrMonkey-eps-converted-to.pdf>
+Package pdftex.def Info: images/corrMonkey-eps-converted-to.pdf used on input l
+ine 211.
+(pdftex.def)             Requested size: 469.75502pt x 352.31299pt.
+Package epstopdf Info: Source file: <images/corrHuman.eps>
+(epstopdf)                    date: 2018-11-07 11:29:45
+(epstopdf)                    size: 16603 bytes
+(epstopdf)             Output file: <images/corrHuman-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-11-07 11:30:27
+(epstopdf)                    size: 6215 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/corrHuman-eps-conve
+rted-to.pdf images/corrHuman.eps>
+(epstopdf)             \includegraphics on input line 217.
+Package epstopdf Info: Output file is already uptodate.
+
+<images/corrHuman-eps-converted-to.pdf, id=188, 562.1pt x 421.575pt>
+File: images/corrHuman-eps-converted-to.pdf Graphic file (type pdf)
+
+<use images/corrHuman-eps-converted-to.pdf>
+Package pdftex.def Info: images/corrHuman-eps-converted-to.pdf used on input li
+ne 217.
+(pdftex.def)             Requested size: 469.75502pt x 352.31299pt.
+ (./backprop.m [18 <./images/corrMonkey-eps-converted-to.pdf>] [19 <./images/co
+rrHuman-eps-converted-to.pdf>]
+[20])
 Package epstopdf Info: Source file: <images/netMetrics.eps>
 (epstopdf)                    date: 2018-11-07 10:01:36
 (epstopdf)                    size: 352858 bytes
@@ -1014,16 +1104,16 @@ Package epstopdf Info: Source file: <images/netMetrics.eps>
 (epstopdf)                    size: 76666 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/netMetrics-eps-conv
 erted-to.pdf images/netMetrics.eps>
-(epstopdf)             \includegraphics on input line 194.
+(epstopdf)             \includegraphics on input line 232.
 Package epstopdf Info: Output file is already uptodate.
-
-<images/netMetrics-eps-converted-to.pdf, id=168, 562.1pt x 421.575pt>
+ <images/netMetrics-eps-converted-to.pdf, id=210, 562.1pt x 421.575pt>
 File: images/netMetrics-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/netMetrics-eps-converted-to.pdf>
 Package pdftex.def Info: images/netMetrics-eps-converted-to.pdf used on input l
-ine 194.
+ine 232.
 (pdftex.def)             Requested size: 469.75502pt x 352.31299pt.
+ [21 <./images/netMetrics-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <images/netMetrics2.eps>
 (epstopdf)                    date: 2018-11-07 09:55:15
 (epstopdf)                    size: 351039 bytes
@@ -1032,38 +1122,40 @@ Package epstopdf Info: Source file: <images/netMetrics2.eps>
 (epstopdf)                    size: 64582 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/netMetrics2-eps-con
 verted-to.pdf images/netMetrics2.eps>
-(epstopdf)             \includegraphics on input line 208.
+(epstopdf)             \includegraphics on input line 246.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/netMetrics2-eps-converted-to.pdf, id=169, 562.1pt x 421.575pt>
+<images/netMetrics2-eps-converted-to.pdf, id=219, 562.1pt x 421.575pt>
 File: images/netMetrics2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/netMetrics2-eps-converted-to.pdf>
 Package pdftex.def Info: images/netMetrics2-eps-converted-to.pdf used on input 
-line 208.
+line 246.
 (pdftex.def)             Requested size: 469.75502pt x 352.31299pt.
- [16] [17 <./images/netMetrics-eps-converted-to.pdf>] [18 <./images/netMetrics2
--eps-converted-to.pdf>]
-(./Schmitt_Drew_HW3.aux) ) 
+ [22 <./images/netMetrics2-eps-converted-to.pdf>] (./Schmitt_Drew_HW3.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 16961 strings out of 493089
- 331938 string characters out of 6134842
+ 17019 strings out of 493089
+ 333216 string characters out of 6134842
  440382 words of memory out of 5000000
- 20052 multiletter control sequences out of 15000+600000
- 11212 words of font info for 43 fonts, out of 8000000 for 9000
+ 20099 multiletter control sequences out of 15000+600000
+ 11520 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,7n,72p,919b,1560s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/am
-sfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmtt10.pfb>
-Output written on Schmitt_Drew_HW3.pdf (18 pages, 1516363 bytes).
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
+sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
+/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/l
+ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on Schmitt_Drew_HW3.pdf (22 pages, 1549790 bytes).
 PDF statistics:
- 211 PDF objects out of 1000 (max. 8388607)
- 128 compressed objects within 2 object streams
+ 252 PDF objects out of 1000 (max. 8388607)
+ 156 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 88 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 108 words of extra memory for PDF output out of 10000 (max. 10000000)
 

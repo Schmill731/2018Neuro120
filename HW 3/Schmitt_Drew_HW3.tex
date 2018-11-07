@@ -179,7 +179,45 @@ From our investigation of the neurons in this layer, the activity of filters 3, 
 
 \subsection{Translation Invariance of AlexNet}
 
-We plot the correlation between activations for the original image and the image translated to the right by amounts 
+We plot the correlation between activations for the original image and the image translated to the right using the following code:
+\lstinputlisting[firstline=54, lastline=84]{deepnet_invariance.m}
+This produces Figure \ref{fig:netTrans}, which shows us that higher layers of the network are more invariant to translation, evident by their higher correlation with the activations produced by the original image. Further, we can see that pooling layers are more invariant than convolution layers as at every stage investigated here, the pooling layer had a higher invariance than the convolution layer. Further, in some cases, the convolution layer seemed to decrease translation invariance overall, as can be seen by the fact that the first convolutional layer had a lower correlation than the correlation between the translated image and the original image (i.e. the data layer).
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{trans_invar.eps}
+\caption{The translation invariance of several layers in AlexNet using an image of a German Shepherd.}
+\label{fig:netTrans}
+\end{figure}
+
+\subsection{Rotation Invariance of AlexNet}
+
+We plot the correlation between activations for the original image and the image rotated using the following code:
+\lstinputlisting[firstline=86, lastline=111]{deepnet_invariance.m}
+This produces Figure \ref{fig:netRot}, which shows us that AlexNet begins to misclassify the image around an angle of 30 degrees (as evident by the probability layer). Thus, it is clear that AlexNet is more resistant to translation than rotation.
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{rot_invar.eps}
+\caption{The rotation invariance of several layers in AlexNet using an image of a German Shepherd.}
+\label{fig:netRot}
+\end{figure}
+
+\subsection{Correlation between RDM of AlexNet and real neural activity}
+
+We computed the RDM for AlexNet and the correlation between the AlexNet RDMs and the experimental RDMs using the following code:
+\lstinputlisting[firstline=113, lastline=144]{deepnet_invariance.m}
+We ran this twice to look at how AlexNet compares both to the monkey recording (Figure \ref{fig:corrMonkey}) and the human fMRI data (Figure \ref{fig:corrHuman}). We can see from these figures that the RDMs of intermediate layers in AlexNet are more similar to the experimental RDMs than the raw data. Indeed, for both datasets, the relu5 (the 5th convolutional layer after the ReLU activation function has been applied) best matched the experimental RDMs (as evident by it having the highest correlation).
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{corrMonkey.eps}
+\caption{The correlation coefficient between the RDM of various layers in AlexNet and electrode recordings in monkeys.}
+\label{fig:corrMonkey}
+\end{figure}
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{corrHuman.eps}
+\caption{The correlation coefficient between the RDM of various layers in AlexNet and fMRI recordings in humans.}
+\label{fig:corr:Human}
+\end{figure}
 
 \section{Back Propagation and Deep Learning}
 
