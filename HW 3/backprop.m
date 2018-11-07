@@ -1,7 +1,5 @@
 clear all;
 
-diag=true;
-
 %% Load MNIST dataset and plot some examples
 
 load mnist_sevens_nines
@@ -55,14 +53,6 @@ for i = 1:max_itr
     % Compute losses and accuracy on train and test data
     L(i) = (1/2)*norm(y_train-yh,'fro')^2;
     acc(i) = mean(sign(yh)==sign(y_train));
-    
-    if diag
-        disp(['at epoch ',num2str(i),' loss is ',num2str(L(i))])
-        if L(i)>10^200
-            pause
-        end
-    end
-    
   
     L_test(i) = (1/2)*norm(y_test-yh_test,'fro')^2;
     acc_test(i) = mean(sign(yh_test)==sign(y_test));
