@@ -1,4 +1,4 @@
-clear all
+clear all;
 %% Load MNIST dataset and plot some examples
 
 load mnist_sevens_nines
@@ -20,7 +20,7 @@ end
 
 %% Implement gradient descent
 P = size(X_train,2); % Number of examples
-max_itr = 5000;
+max_itr = 500;
 alpha = .1/P;
 
 Ni = size(X_train,1); % Input dimension
@@ -33,18 +33,19 @@ W3 = weight_scale*randn(1,Nh2);
 W2 = weight_scale*randn(Nh2,Nh1);
 W1 = weight_scale*randn(Nh1,Ni);
 
+
 clear L acc L_test acc_test
 for i = 1:max_itr
     
     % Compute forward propagation for train and test data
     
     % Train data
-    h1 = % ???
-    h2 = % ???
-    yh = % ???
+    h1 = max(W1*X_train, 0);
+    h2 = max(W2*h1, 0);
+    yh = W3*h2;
     
     % Test data
-    yh_test = % ???
+    yh_test = W3*max(W2*max(W1*X_test, 0), 0);
     
     % Compute losses and accuracy on train and test data
     L(i) = 1/2*norm(y_train-yh,'fro')^2;
@@ -55,21 +56,21 @@ for i = 1:max_itr
     acc_test(i) = mean(sign(yh_test)==sign(y_test));
     
     % Compute backprop (just on training data)
-    e = % ???
+    e = y_train - yh;
 
-    d3 = % ???
-    d2 = % ???
-    d1 = % ???
+    d3 = e;
+    d2 = (W3'*d3).*d_relu(h2);
+    d1 = (W2'*d2).*d_relu(h1);
 
     % Compute gradient
-    g3 = % ???
-    g2 = % ???
-    g1 = % ???
+    g3 = d3*h2';
+    g2 = d2*h1';
+    g1 = d1*X_train';
 
     % Update weights
-    W3 = % ???
-    W2 = % ???
-    W1 = % ???
+    W3 = W3 - alpha*g3;
+    W2 = W2 - alpha*g2;
+    W1 = W1 - alpha*g1;
 end
 
 % Plot the learning trajectory
@@ -85,3 +86,8 @@ subplot(122)
 plot(t,acc,t,acc_test,'linewidth',2)
 legend('Train accuracy','Test accuracy')
 
+function d_res = d_relu(A)
+    d_res = A;
+    d_res(d_res > 0) = 1;
+    d_res(d_res <= 0) = 0;
+end
