@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  6 NOV 2018 15:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  7 NOV 2018 10:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -739,10 +739,6 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 51.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-
-LaTeX Warning: Reference `fig:dog' on page 1 undefined on input line 57.
-
-
 Underfull \hbox (badness 2781) in paragraph at lines 57--58
 \OT1/cmr/m/n/10.95 We cre-ated the dif-fer-ence of Gaus-sians fil-ter via the f
 ol-low-ing line of code: [][][][][]
@@ -765,11 +761,7 @@ File: images/dog-eps-converted-to.pdf Graphic file (type pdf)
 Package pdftex.def Info: images/dog-eps-converted-to.pdf used on input line 60.
 
 (pdftex.def)             Requested size: 469.75502pt x 352.31299pt.
-
-
-LaTeX Warning: Reference `fig:machConv' on page 1 undefined on input line 67.
-
-[1
+ [1
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./image
 s/dog-eps-converted-to.pdf>]
@@ -785,18 +777,14 @@ onverted-to.pdf images/mach_dog_conv.eps>
 (epstopdf)             \includegraphics on input line 70.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/mach_dog_conv-eps-converted-to.pdf, id=21, 562.1pt x 421.575pt>
+<images/mach_dog_conv-eps-converted-to.pdf, id=20, 562.1pt x 421.575pt>
 File: images/mach_dog_conv-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/mach_dog_conv-eps-converted-to.pdf>
 Package pdftex.def Info: images/mach_dog_conv-eps-converted-to.pdf used on inpu
 t line 70.
 (pdftex.def)             Requested size: 469.75502pt x 352.31299pt.
-
-
-LaTeX Warning: Reference `fig:machConv2' on page 2 undefined on input line 77.
-
-[2 <./images/mach_dog_conv-eps-converted-to.pdf>]
+ [2 <./images/mach_dog_conv-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <images/mach_dog_conv2.eps>
 (epstopdf)                    date: 2018-11-05 21:27:08
 (epstopdf)                    size: 36066 bytes
@@ -809,17 +797,13 @@ converted-to.pdf images/mach_dog_conv2.eps>
 (epstopdf)             \includegraphics on input line 80.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/mach_dog_conv2-eps-converted-to.pdf, id=33, 562.1pt x 421.575pt>
+<images/mach_dog_conv2-eps-converted-to.pdf, id=32, 562.1pt x 421.575pt>
 File: images/mach_dog_conv2-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/mach_dog_conv2-eps-converted-to.pdf>
 Package pdftex.def Info: images/mach_dog_conv2-eps-converted-to.pdf used on inp
 ut line 80.
 (pdftex.def)             Requested size: 469.75502pt x 352.31299pt.
-
-
-LaTeX Warning: Reference `fig:checkConv' on page 3 undefined on input line 87.
-
 Package epstopdf Info: Source file: <images/check_dog_conv.eps>
 (epstopdf)                    date: 2018-11-05 21:27:08
 (epstopdf)                    size: 72224 bytes
@@ -831,21 +815,14 @@ Package epstopdf Info: Source file: <images/check_dog_conv.eps>
 converted-to.pdf images/check_dog_conv.eps>
 (epstopdf)             \includegraphics on input line 90.
 Package epstopdf Info: Output file is already uptodate.
-<images/check_dog_conv-eps-converted-to.pdf, id=34, 562.1pt x 421.575pt>
+
+<images/check_dog_conv-eps-converted-to.pdf, id=33, 562.1pt x 421.575pt>
 File: images/check_dog_conv-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/check_dog_conv-eps-converted-to.pdf>
 Package pdftex.def Info: images/check_dog_conv-eps-converted-to.pdf used on inp
 ut line 90.
 (pdftex.def)             Requested size: 469.75502pt x 352.31299pt.
-
-
-LaTeX Warning: Reference `fig:dog3' on page 3 undefined on input line 97.
-
-
-LaTeX Warning: Reference `fig:checkConv2' on page 3 undefined on input line 97.
-
-
 
 Underfull \hbox (badness 6477) in paragraph at lines 97--98
 \OT1/cmr/m/n/10.95 We make a new dif-fer-ence of Gaus-sians fil-ter with the fo
@@ -864,7 +841,7 @@ to.pdf images/dog3.eps>
 (epstopdf)             \includegraphics on input line 100.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/dog3-eps-converted-to.pdf, id=45, 562.1pt x 421.575pt>
+<images/dog3-eps-converted-to.pdf, id=44, 562.1pt x 421.575pt>
 File: images/dog3-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/dog3-eps-converted-to.pdf>
@@ -883,7 +860,7 @@ f>
 (epstopdf)             \includegraphics on input line 106.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/check_dog3_conv-eps-converted-to.pdf, id=46, 562.1pt x 421.575pt>
+<images/check_dog3_conv-eps-converted-to.pdf, id=45, 562.1pt x 421.575pt>
 File: images/check_dog3_conv-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/check_dog3_conv-eps-converted-to.pdf>
@@ -891,14 +868,6 @@ Package pdftex.def Info: images/check_dog3_conv-eps-converted-to.pdf used on in
 put line 106.
 (pdftex.def)             Requested size: 469.75502pt x 352.31299pt.
  (./earlyvision.m [4 <./images/check_dog_conv-eps-converted-to.pdf>])
-
-LaTeX Warning: Reference `fig:pepper_broad' on page 5 undefined on input line 1
-15.
-
-
-LaTeX Warning: Reference `fig:pepper_narrow' on page 5 undefined on input line 
-115.
-
 Package epstopdf Info: Source file: <images/peppers_dog_conv.eps>
 (epstopdf)                    date: 2018-11-05 21:27:08
 (epstopdf)                    size: 77414 bytes
@@ -910,7 +879,8 @@ df>
 s-converted-to.pdf images/peppers_dog_conv.eps>
 (epstopdf)             \includegraphics on input line 118.
 Package epstopdf Info: Output file is already uptodate.
-<images/peppers_dog_conv-eps-converted-to.pdf, id=57, 562.1pt x 421.575pt>
+
+<images/peppers_dog_conv-eps-converted-to.pdf, id=56, 562.1pt x 421.575pt>
 File: images/peppers_dog_conv-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/peppers_dog_conv-eps-converted-to.pdf>
@@ -929,7 +899,7 @@ ps-converted-to.pdf images/peppers_dog3_conv.eps>
 (epstopdf)             \includegraphics on input line 124.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/peppers_dog3_conv-eps-converted-to.pdf, id=58, 562.1pt x 421.575pt>
+<images/peppers_dog3_conv-eps-converted-to.pdf, id=57, 562.1pt x 421.575pt>
 File: images/peppers_dog3_conv-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/peppers_dog3_conv-eps-converted-to.pdf>
@@ -938,12 +908,8 @@ input line 124.
 (pdftex.def)             Requested size: 469.75502pt x 352.31299pt.
  (./earlyvision.m [5 <./images/dog3-eps-converted-to.pdf>] [6 <./images/check_d
 og3_conv-eps-converted-to.pdf>] [7 <./images/peppers_dog_conv-eps-converted-to.
-pdf>] [8 <./images/peppers_dog3_conv-eps-converted-to.pdf>])
-
-LaTeX Warning: Reference `fig:AlexWeights' on page 9 undefined on input line 13
-6.
-
-(./deepnet_invariance.m)
+pdf>] [8 <./images/peppers_dog3_conv-eps-converted-to.pdf>]) (./deepnet_invaria
+nce.m)
 Package epstopdf Info: Source file: <images/alex_weights.eps>
 (epstopdf)                    date: 2018-11-05 22:36:12
 (epstopdf)                    size: 1565704 bytes
@@ -955,7 +921,7 @@ nverted-to.pdf images/alex_weights.eps>
 (epstopdf)             \includegraphics on input line 142.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/alex_weights-eps-converted-to.pdf, id=97, 635.37375pt x 592.2125pt>
+<images/alex_weights-eps-converted-to.pdf, id=96, 635.37375pt x 592.2125pt>
 File: images/alex_weights-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/alex_weights-eps-converted-to.pdf>
@@ -963,111 +929,141 @@ Package pdftex.def Info: images/alex_weights-eps-converted-to.pdf used on input
  line 142.
 (pdftex.def)             Requested size: 469.75502pt x 437.8599pt.
  [9] (./deepnet_invariance.m)
+Package epstopdf Info: Source file: <images/pepper_classify.eps>
+(epstopdf)                    date: 2018-11-05 22:36:12
+(epstopdf)                    size: 208586 bytes
+(epstopdf)             Output file: <images/pepper_classify-eps-converted-to.pd
+f>
+(epstopdf)                    date: 2018-11-07 09:49:37
+(epstopdf)                    size: 69526 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/pepper_classify-eps
+-converted-to.pdf images/pepper_classify.eps>
+(epstopdf)             \includegraphics on input line 153.
+Package epstopdf Info: Output file is already uptodate.
 
-LaTeX Warning: Reference `fig:pepClassified' on page 10 undefined on input line
- 158.
+<images/pepper_classify-eps-converted-to.pdf, id=100, 474.77374pt x 385.44pt>
+File: images/pepper_classify-eps-converted-to.pdf Graphic file (type pdf)
 
-[10 <./images/alex_weights-eps-converted-to.pdf>] (./deepnet_invariance.m)
-
-LaTeX Warning: Reference `fig:f3' on page 11 undefined on input line 161.
-
-
-LaTeX Warning: Reference `fig:f10' on page 11 undefined on input line 161.
-
-
-LaTeX Warning: Reference `fig:f59' on page 11 undefined on input line 161.
-
+<use images/pepper_classify-eps-converted-to.pdf>
+Package pdftex.def Info: images/pepper_classify-eps-converted-to.pdf used on in
+put line 153.
+(pdftex.def)             Requested size: 469.75502pt x 381.38094pt.
+ [10 <./images/alex_weights-eps-converted-to.pdf>] (./deepnet_invariance.m [11 
+<./images/pepper_classify-eps-converted-to.pdf>])
 Package epstopdf Info: Source file: <images/filter3.eps>
 (epstopdf)                    date: 2018-11-05 22:36:12
 (epstopdf)                    size: 184261 bytes
 (epstopdf)             Output file: <images/filter3-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-11-06 15:55:05
+(epstopdf)                    size: 40798 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/filter3-eps-convert
 ed-to.pdf images/filter3.eps>
-(epstopdf)             \includegraphics on input line 164.
-runsystem(repstopdf --outfile=images/filter3-eps-converted-to.pdf images/filter
-3.eps)...executed safely (allowed).
+(epstopdf)             \includegraphics on input line 163.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <images/filter3-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-11-06 15:55:05
-(epstopdf)                    size: 40798 bytes.
-<images/filter3-eps-converted-to.pdf, id=110, 562.1pt x 421.575pt>
+<images/filter3-eps-converted-to.pdf, id=119, 562.1pt x 421.575pt>
 File: images/filter3-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/filter3-eps-converted-to.pdf>
 Package pdftex.def Info: images/filter3-eps-converted-to.pdf used on input line
- 164.
+ 163.
 (pdftex.def)             Requested size: 469.75502pt x 352.31299pt.
 Package epstopdf Info: Source file: <images/filter10.eps>
 (epstopdf)                    date: 2018-11-05 22:36:12
 (epstopdf)                    size: 186171 bytes
 (epstopdf)             Output file: <images/filter10-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-11-06 15:55:06
+(epstopdf)                    size: 41357 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/filter10-eps-conver
 ted-to.pdf images/filter10.eps>
-(epstopdf)             \includegraphics on input line 170.
-runsystem(repstopdf --outfile=images/filter10-eps-converted-to.pdf images/filte
-r10.eps)...executed safely (allowed).
+(epstopdf)             \includegraphics on input line 169.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <images/filter10-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-11-06 15:55:06
-(epstopdf)                    size: 41357 bytes.
-
-<images/filter10-eps-converted-to.pdf, id=111, 562.1pt x 421.575pt>
+<images/filter10-eps-converted-to.pdf, id=120, 562.1pt x 421.575pt>
 File: images/filter10-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/filter10-eps-converted-to.pdf>
 Package pdftex.def Info: images/filter10-eps-converted-to.pdf used on input lin
-e 170.
+e 169.
 (pdftex.def)             Requested size: 469.75502pt x 352.31299pt.
 Package epstopdf Info: Source file: <images/filter59.eps>
 (epstopdf)                    date: 2018-11-05 22:36:12
 (epstopdf)                    size: 186275 bytes
 (epstopdf)             Output file: <images/filter59-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-11-06 15:55:07
+(epstopdf)                    size: 39866 bytes
 (epstopdf)             Command: <repstopdf --outfile=images/filter59-eps-conver
 ted-to.pdf images/filter59.eps>
-(epstopdf)             \includegraphics on input line 176.
-runsystem(repstopdf --outfile=images/filter59-eps-converted-to.pdf images/filte
-r59.eps)...executed safely (allowed).
+(epstopdf)             \includegraphics on input line 175.
+Package epstopdf Info: Output file is already uptodate.
 
-Package epstopdf Info: Result file: <images/filter59-eps-converted-to.pdf>
-(epstopdf)                    date: 2018-11-06 15:55:07
-(epstopdf)                    size: 39866 bytes.
-
-<images/filter59-eps-converted-to.pdf, id=112, 562.1pt x 421.575pt>
+<images/filter59-eps-converted-to.pdf, id=121, 562.1pt x 421.575pt>
 File: images/filter59-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/filter59-eps-converted-to.pdf>
 Package pdftex.def Info: images/filter59-eps-converted-to.pdf used on input lin
-e 176.
+e 175.
 (pdftex.def)             Requested size: 469.75502pt x 352.31299pt.
- [11] [12 <./images/filter3-eps-converted-to.pdf>] [13 <./images/filter10-eps-c
-onverted-to.pdf>] [14 <./images/filter59-eps-converted-to.pdf>] (./Schmitt_Drew
-_HW3.aux)
+ [12 <./images/filter3-eps-converted-to.pdf>] (./backprop.m [13 <./images/filte
+r10-eps-converted-to.pdf>] [14 <./images/filter59-eps-converted-to.pdf>] [15])
+Package epstopdf Info: Source file: <images/netMetrics.eps>
+(epstopdf)                    date: 2018-11-07 10:01:36
+(epstopdf)                    size: 352858 bytes
+(epstopdf)             Output file: <images/netMetrics-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-11-07 10:02:15
+(epstopdf)                    size: 76666 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/netMetrics-eps-conv
+erted-to.pdf images/netMetrics.eps>
+(epstopdf)             \includegraphics on input line 194.
+Package epstopdf Info: Output file is already uptodate.
 
-LaTeX Warning: There were undefined references.
+<images/netMetrics-eps-converted-to.pdf, id=168, 562.1pt x 421.575pt>
+File: images/netMetrics-eps-converted-to.pdf Graphic file (type pdf)
 
+<use images/netMetrics-eps-converted-to.pdf>
+Package pdftex.def Info: images/netMetrics-eps-converted-to.pdf used on input l
+ine 194.
+(pdftex.def)             Requested size: 469.75502pt x 352.31299pt.
+Package epstopdf Info: Source file: <images/netMetrics2.eps>
+(epstopdf)                    date: 2018-11-07 09:55:15
+(epstopdf)                    size: 351039 bytes
+(epstopdf)             Output file: <images/netMetrics2-eps-converted-to.pdf>
+(epstopdf)                    date: 2018-11-07 09:56:57
+(epstopdf)                    size: 64582 bytes
+(epstopdf)             Command: <repstopdf --outfile=images/netMetrics2-eps-con
+verted-to.pdf images/netMetrics2.eps>
+(epstopdf)             \includegraphics on input line 208.
+Package epstopdf Info: Output file is already uptodate.
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+<images/netMetrics2-eps-converted-to.pdf, id=169, 562.1pt x 421.575pt>
+File: images/netMetrics2-eps-converted-to.pdf Graphic file (type pdf)
 
- ) 
+<use images/netMetrics2-eps-converted-to.pdf>
+Package pdftex.def Info: images/netMetrics2-eps-converted-to.pdf used on input 
+line 208.
+(pdftex.def)             Requested size: 469.75502pt x 352.31299pt.
+ [16] [17 <./images/netMetrics-eps-converted-to.pdf>] [18 <./images/netMetrics2
+-eps-converted-to.pdf>]
+(./Schmitt_Drew_HW3.aux) ) 
 Here is how much of TeX's memory you used:
- 16904 strings out of 493089
- 330948 string characters out of 6134842
- 429382 words of memory out of 5000000
- 20000 multiletter control sequences out of 15000+600000
- 11520 words of font info for 44 fonts, out of 8000000 for 9000
+ 16961 strings out of 493089
+ 331938 string characters out of 6134842
+ 440382 words of memory out of 5000000
+ 20052 multiletter control sequences out of 15000+600000
+ 11212 words of font info for 43 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 66i,6n,72p,919b,1560s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
-/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
-sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
-/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/l
-ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on Schmitt_Drew_HW3.pdf (14 pages, 1318801 bytes).
+ 66i,7n,72p,919b,1560s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmtt10.pfb>
+Output written on Schmitt_Drew_HW3.pdf (18 pages, 1516363 bytes).
 PDF statistics:
- 184 PDF objects out of 1000 (max. 8388607)
- 111 compressed objects within 2 object streams
+ 211 PDF objects out of 1000 (max. 8388607)
+ 128 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 73 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 88 words of extra memory for PDF output out of 10000 (max. 10000000)
 

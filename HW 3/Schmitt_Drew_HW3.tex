@@ -158,8 +158,7 @@ We apply the network to the peppers image with the following code:
 This produces Figure \ref{fig:pepClassified}, which we can see correctly classifies the image as a bell pepper (to be fair, there are multiple bell peppers within the image, but the network wasn't trained to report how many peppers there are). We then plot the activity of the neurons in the first convolution layer using the following code:
 \lstinputlisting[firstline=31, lastline=52]{deepnet_invariance.m}
 
-From our investigation of the neurons in this layer, the activity of filters 3, 10, and 59 are of interest and are plotted in Figures \ref{fig:f3}, \ref{fig:f10}, and \ref{fig:f59}. From these figures, we can see that filter 3 is selective for the rough outlines of the peppers (it is certainly not 100\% accurate or does so in extreme detail). Conversely, filter 10 is selectively for the bodies of the peppers, particularly those that are warm-colored. \textbf{IDEFK WHAT FILTER 59 IS SELECTIVE FOR}.
-
+From our investigation of the neurons in this layer, the activity of filters 3, 10, and 59 are of interest and are plotted in Figures \ref{fig:f3}, \ref{fig:f10}, and \ref{fig:f59}. From these figures, we can see that filter 3 is selective for the rough outlines of the peppers (it is certainly not 100\% accurate or does so in extreme detail). Conversely, filter 10 is selectively for the bodies of the peppers, particularly those that are warm-colored. Filter 59 appears to also be selective for edges or outlines, as can be seen from the fact that it picks up the edge of the table on which the peppers lay very well. 
 \begin{figure}[ht!]
 \includegraphics[width=1\textwidth]{filter3.eps}
 \caption{The activity of filter 3 in the first convolutional layer when running the pepper image through AlexNet.}
@@ -184,6 +183,31 @@ We plot the correlation between activations for the original image and the image
 
 \section{Back Propagation and Deep Learning}
 
-\subsection{
+\subsection{Gradient Descent}
+
+We implement gradient descent using the following code:
+\lstinputlisting{backprop.m}
+
+This produces Figure \ref{fig:netMetrics}, which shows the change in loss and accuracy on both the training and test data over time.
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{netMetrics.eps}
+\caption{The loss and accuracy of both training and test data for a neural net trained on a subset of MNIST data.}
+\label{fig:netMetrics}
+\end{figure}
+
+\subsection{Reflections on the Neural Net}
+
+We can see from the loss and accuracy graphs that this neural net performs quite well on both training data and test data with an accuracy of 100\% by the end of training. Because the model performed 100\% accuracy on the test data, we can conclude that there was no overfitting, so there is no need to stop training early, though it appears we could stop at around 4000 steps as the accuracy peaked at 100\% near there and maintained that level.
+
+\subsection{Larger Weight Scale}
+
+We ran the code above again changing only \lstinline{weight_scale = .1;}, and plot the results in Figure \ref{fig:netMetrics2}. We can see from this that it does not substantially impact the training accuracy, but it does result in a small decrease of the test accuracy to about 99\%. Stopping training early in this case, however, would not help the test accuracy as the larger weight variance removed any oscillations in the loss and accuracy that we saw before and resulted in a slow but steady increase of the accuracy that resulted in an asymptote. Thus, it seems that the smaller weight variance and not this larger weight variance might be better for the purposes of generalization based on our findings. 
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{netMetrics2.eps}
+\caption{The loss and accuracy of both training and test data for a neural net trained on a subset of MNIST data with a larger weight scale of 0.1.}
+\label{fig:netMetrics2}
+\end{figure}
 
 \end{document}

@@ -75,14 +75,14 @@ for i = 1:max_itr
     d1 = (W2'*d2).*d_relu(u1);
 
     % Compute gradient
-    g3 = d3*h2';
-    g2 = d2*h1';
-    g1 = d1*X_train';
+    g3 = -d3*h2';
+    g2 = -d2*h1';
+    g1 = -d1*X_train';
 
     % Update weights
-    W3 = W3 + alpha*g3;
-    W2 = W2 + alpha*g2;
-    W1 = W1 + alpha*g1;
+    W3 = W3 - alpha*g3;
+    W2 = W2 - alpha*g2;
+    W1 = W1 - alpha*g1;
 end
 
 % Plot the learning trajectory
