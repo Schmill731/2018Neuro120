@@ -64,53 +64,81 @@ disp('Done')
 
 %% Implement Hopfield net update
 
-%hopfield_update = @(h) ...your code here...
+hopfield_update = @(h) (W*h - 1/2) >= 0;
 
-%% Run a probe: give it a question, and see if it fills in the answer
+% %% Run a probe: give it a question, and see if it fills in the answer
+% 
+% for question_num = 1:P
+%     xi0 = make_input(questions{question_num},' ');
+% 
+%     T = 10;
+%     h = zeros(N,T);
+%     h(:,1) = xi0(:);
+% 
+%     figure(1)
+%     subplot(2,1,1)
+%     plot_mem(h(:,1))
+%     title(sprintf('Question (#%d)',question_num))
+%     for t = 1:T-1
+%         h(:,t+1) = hopfield_update(h(:,t));
+%         
+%         subplot(2,1,2)
+%         plot_mem(h(:,t))
+%         title(sprintf('Recalled pattern at step %d',t))
+%         drawnow
+%     end
+%     pause
+% end
 
-for question_num = 1:P
-    xi0 = make_input(questions{question_num},' ');
+% %% Look at one question in more detail
+% for question_num = [3, 5, 7]
+%     question = questions{question_num};
+%     answer = ''; 
+%     xi0 = make_input(question,answer);
+% 
+%     T = 10;
+%     h = zeros(N,T);
+%     h(:,1) = xi0(:);
+% 
+%     figure(1)
+%     subplot(10,1,1)
+%     plot_mem(h(:,1))
+%     title(sprintf('Question in Detail (#%d)',question_num))
+%     for t = 1:T-1
+%         h(:,t+1) = hopfield_update(h(:,t));
+% 
+%         subplot(10,1,t+1)
+%         plot_mem(h(:,t))
+%         title(sprintf('Recalled pattern at step %d',t))
+%         drawnow
+%     end
+%     pause
+% end
+
+%% Look at how much of the answer must be supplied
+for ans = 1:length(answers{3})
+    question_num = 3;
+    question = questions{question_num};
+    answer = extractBefore(answers{3}, ans); 
+    xi0 = make_input(question,answer);
 
     T = 10;
     h = zeros(N,T);
     h(:,1) = xi0(:);
 
     figure(1)
-    subplot(2,1,1)
+    subplot(10,1,1)
     plot_mem(h(:,1))
-    title(sprintf('Question (#%d)',question_num))
+    title(sprintf('Question in Detail (#%d)',question_num))
     for t = 1:T-1
         h(:,t+1) = hopfield_update(h(:,t));
-        
-        subplot(2,1,2)
+
+        subplot(10,1,t+1)
         plot_mem(h(:,t))
         title(sprintf('Recalled pattern at step %d',t))
         drawnow
     end
-    
-end
-
-%% Look at one question in more detail
-question_num = 3;
-question = questions{question_num};
-answer = ''; 
-xi0 = make_input(question,answer);
-
-T = 10;
-h = zeros(N,T);
-h(:,1) = xi0(:);
-
-figure(1)
-subplot(10,1,1)
-plot_mem(h(:,1))
-title(sprintf('Corrupted input (#%d)',question_num))
-for t = 1:T-1
-    h(:,t+1) = hopfield_update(h(:,t));
-
-    subplot(10,1,t+1)
-    plot_mem(h(:,t))
-    title(sprintf('Recalled pattern at step %d',t))
-    drawnow
+    pause
 end
 
 
