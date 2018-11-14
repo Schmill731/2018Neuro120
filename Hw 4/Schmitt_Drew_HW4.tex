@@ -1,0 +1,69 @@
+\documentclass[11pt, oneside]{article}
+\usepackage[margin=1in]{geometry}
+\geometry{letterpaper}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage[parfill]{parskip}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{color}
+\usepackage{standalone}
+\usepackage{gensymb}
+\usepackage{tikz}
+\usetikzlibrary{matrix,chains,positioning,decorations.pathreplacing,arrows}
+\usepackage{wrapfig}
+\usepackage{epstopdf}
+
+\graphicspath{ {images/} }
+
+\def\layersep{2.5cm}
+
+\sloppy
+\definecolor{lightgray}{gray}{0.5}
+\setlength{\parindent}{0pt}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=Matlab,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+\title{Neuro 120 Homework 4: Short and Long Term Memory}
+\author{William Schmitt and Will Drew}
+\date{Due: Thursday 15 November 2018}
+
+\begin{document}
+\maketitle
+
+\section{Short Term Memory}
+
+\subsection{RNN Dynamics with No Recurrent Connections}
+
+We build the RNN with the following code:
+\lstinputlisting{shortterm_mem.m}
+This code produces Figure \ref{fig:RNNnoR}, which we can see tells us that the activity in the network has died out at $t = 2.8$s.
+
+\subsection{RNN with Autapses}
+
+We comment out line 16 and uncomment line 18 and 19 of the code attached above to run the network 
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{RNNnoR.eps}
+\caption{The dynamics of a RNN with no recurrent connections.}
+\label{fig:RNNnoR}
+\end{document}
