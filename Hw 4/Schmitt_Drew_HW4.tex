@@ -14,6 +14,7 @@
 \usetikzlibrary{matrix,chains,positioning,decorations.pathreplacing,arrows}
 \usepackage{wrapfig}
 \usepackage{epstopdf}
+\usepackage{float}
 
 \graphicspath{ {code/images/} }
 
@@ -70,21 +71,21 @@ We comment out line 16 and uncomment line 18 and 19 of the code attached above t
 
 In Figure \ref{fig:RNN09}, we see that activity in the network has not died out completely 9 seconds after the pulse, but it seems like if we expanded the time scale, the network activity would die out at around 12-14 seconds. \\
 In Figure \ref{fig:RNN10}, we see that activity in the network remains stable after $t = 2$s.\\
-In Figure \ref{fig:RNN11}, we see that activity in the network appears to diverge towards $+\infty$.\\
+In Figure \ref{fig:RNN11}, we see that activity in the network appears to diverge towards $+\infty$.
 
-\begin{figure}[ht!]
+\begin{figure}[H]
 \includegraphics[width=1\textwidth]{RNN09.eps}
 \caption{The dynamics of a RNN with autapses. $c = 0.9$}
 \label{fig:RNN09}
 \end{figure}
 
-\begin{figure}[ht!]
+\begin{figure}[H]
 \includegraphics[width=1\textwidth]{RNN10.eps}
 \caption{The dynamics of a RNN with autapses. $c = 1.0$}
 \label{fig:RNN10}
 \end{figure}
 
-\begin{figure}[ht!]
+\begin{figure}[H]
 \includegraphics[width=1\textwidth]{RNN11.eps}
 \caption{The dynamics of a RNN with autapses. $c = 1.1$}
 \label{fig:RNN11}
