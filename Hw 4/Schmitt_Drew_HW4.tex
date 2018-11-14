@@ -150,6 +150,63 @@ In practice, it appears that a memory with $c = 0.9$ would be better where noise
 
 \section{Long Term Memory}
 
+\begin{enumerate}
+  \item Out of the 7 questions stored, it gets 6 correct.
+
+  \item The dynamics for questions 3, 5, and 7 are shown in Figures \ref{fig:q3detail}, \ref{fig:q5detail}, and \ref{fig:q7detail}.
+
+  For question 3, it starts off correctly constructing the appropriate answer, but then degenerates into remembering an entirely different question/answer pair.
+
+  For question 5, it eventually reaches the correct answer for the question in about 3 steps.
+
+  For question 7, it eventually reaches the correct answer for the question in about 3 steps.
+
+  \item Question 3 was answered incorrectly. As seen in Figure \ref{fig:q3answer}, the network required 3 characters before the correct answer was recalled.
+
+  \item We see the dynamics of questions 6 and 7 at varying levels of corruption in Figures \ref{fig:q6corrupt} and \ref{fig:q7corrupt}.
+
+  The networks fails to recall question 6 at approximately 40\% and fails to recall question 7 at approximately 10\%. This means that question 6 is more strongly memorized by the network. For question 6, at 40\% corruption, we cannot make out what the correct answer is from the corrupted input, but for question 7, at 10\%, the corrupted input is still vaguely readable, enabling us to recall the correct answer.
+
+  \item The advantages of location addressable memory is that memories can be randomly accessed and arbitrarily recalled given a target location. However, to access the memories, we must maintain an index for all memories. This is a disadvantage. Another disadvantage of location addressable memory is that if the location is lost, it is virtually impossible to retrieve the memory, even if you remember a part of it.
+
+  The advantages and disadvantages of content addressable memories are nearly the opposite of those for location adressable memories. Addressable memories can be retrieved by partial memories and do not require indexing. However, recalled memories can be confabulated as a partial memory can be mistaken as a reference to an entirely different one. In general, content addressable memory recall is not 100\% reliable, as other memory errors can also occur.
 
 
+\end{enumerate}
+
+ \begin{figure}[H]
+  \includegraphics[width=1\textwidth]{q3detail.eps}
+  \caption{The dynamics for question 3.}
+  \label{fig:q3detail}
+  \end{figure}
+
+  \begin{figure}[H]
+  \includegraphics[width=1\textwidth]{q5detail.eps}
+  \caption{The dynamics for question 5.}
+  \label{fig:q5detail}
+  \end{figure}
+
+  \begin{figure}[H]
+  \includegraphics[width=1\textwidth]{q7detail.eps}
+  \caption{The dynamics for question 7.}
+  \label{fig:q7detail}
+  \end{figure}
+
+  \begin{figure}[H]
+  \includegraphics[width=1\textwidth]{q3answer.eps}
+  \caption{The dynamics for question 3 given 3 starting characters for the answer.}
+  \label{fig:q3answer}
+  \end{figure}
+
+  \begin{figure}[H]
+  \includegraphics[width=1\textwidth]{q6corrupt.eps}
+  \caption{The dynamics for question 6 at different levels of corruption.}
+  \label{fig:q6corrupt}
+  \end{figure}
+
+  \begin{figure}[H]
+  \includegraphics[width=1\textwidth]{q7corrupt.eps}
+  \caption{The dynamics for question 7 at different levels of corruption.}
+  \label{fig:q7corrupt}
+  \end{figure}
 \end{document}
