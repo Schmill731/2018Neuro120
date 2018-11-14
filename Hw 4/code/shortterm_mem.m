@@ -15,7 +15,7 @@ t = ((1:S)-1)*dt; % time
 
 % W = zeros(N,N); % No recurrent connections
 
-weight_scale = 1;
+weight_scale = 1.1;
 W = weight_scale*eye(N); % Autapses
 
 %[U,~,~] = svd(randn(N,N)); % Random orthonormal connections
