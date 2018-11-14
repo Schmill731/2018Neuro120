@@ -13,10 +13,10 @@ t = ((1:S)-1)*dt; % time
 
 % Set up recurrent weight structure
 
-W = zeros(N,N); % No recurrent connections
+% W = zeros(N,N); % No recurrent connections
 
-%weight_scale = 1;
-%W = weight_scale*eye(N); % Autapses
+weight_scale = 1;
+W = weight_scale*eye(N); % Autapses
 
 %[U,~,~] = svd(randn(N,N)); % Random orthonormal connections
 %W = weight_scale*U;
@@ -34,17 +34,33 @@ V = ones(N,1);
 
 r = zeros(N,S);
 for s = 1:S-1
-  %  r(:,s+1) = r(:,s) + (...your code here...)*dt/tau;
+   r(:,s+1) = r(:,s) + (-r(:, s)+W*r(:, s) + V*I(:, s))*dt/tau;
 end
 
 % Calculate eigenvalues of recurrent weights
 
 lam = eig(W);
 
+% Calculate when activity died out
+[row, col] = find(r<0.1);
+freq = tabulate(col);
+t_dead = t(freq(:, 2) == 50);
+t_dead = min(t_dead(t_dead>2));
+
 subplot(311)
 plot(t,r')
+hold on
+if size(t_dead, 2) > 0
+    plot([t_dead t_dead], [0 1])
+end
 xlabel('Time (a.u.)')
 ylabel('Activity')
+legend('Activity', 'Network Inactive')
+if size(t_dead, 2) > 0
+    text(5, 0.5, sprintf('Time Becomes Inactive: %.2fs', t_dead));
+else
+    text(5, 0.5, 'Network Remains Active');
+end
 subplot(312)
 plot(t,I)
 xlabel('Time (a.u.)')
