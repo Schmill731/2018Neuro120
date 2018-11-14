@@ -89,4 +89,11 @@ In Figure \ref{fig:RNN11}, we see that activity in the network appears to diverg
 \caption{The dynamics of a RNN with autapses. $c = 1.1$}
 \label{fig:RNN11}
 \end{figure}
+
+The magnitude of the eigenvalues of the recurrent matrix $W$ appear to be correlated with the weight scale $c$. In fact, they appear to have equal values!
+
+We see that when the input is on, the activity increases as expected as $VI(t)$ adds to the rate of change of neuronal activity. When the input is off, that term disappears and we are left with $(c-1)r(t)$. When $c$ is less than 1 $(c=0.9)$, this term is negative, and neuronal activity decreases during this period towards 0. When $c = 1$, we see that this term is 0, indicating that there is no change in neuronal activity during this period. When $c$ is greater than 1 $(c=1.1)$, then this term is positive, indicating that neuronal activity should be increasing during this period.
+
+Thus, the best choice of $c$ to stably store a memory would be $c=1$, as neuronal activity remains constant, neither dying out over time nor diverging towards infinity (brains crashing!).
+
 \end{document}
