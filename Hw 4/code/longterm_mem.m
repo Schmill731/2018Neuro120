@@ -147,7 +147,7 @@ for question_num = 6:7
     for prob = .1:.05:1
         xi0 = make_input(questions{question_num},'');
 
-        % Add noise
+        % Add noise 
         corruption_probability = prob;
         corrupted_bits = rand(Ny,Nx)<corruption_probability;
         xi0 = xi0.*(1-corrupted_bits)+(1-xi0).*corrupted_bits;
