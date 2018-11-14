@@ -116,55 +116,58 @@ hopfield_update = @(h) (W*h - 1/2) >= 0;
 % end
 
 %% Look at how much of the answer must be supplied
-for ans = 1:length(answers{3})
-    question_num = 3;
-    question = questions{question_num};
-    answer = extractBefore(answers{3}, ans); 
-    xi0 = make_input(question,answer);
-
-    T = 10;
-    h = zeros(N,T);
-    h(:,1) = xi0(:);
-
-    figure(1)
-    subplot(10,1,1)
-    plot_mem(h(:,1))
-    title(sprintf('Question in Detail (#%d)',question_num))
-    for t = 1:T-1
-        h(:,t+1) = hopfield_update(h(:,t));
-
-        subplot(10,1,t+1)
-        plot_mem(h(:,t))
-        title(sprintf('Recalled pattern at step %d',t))
-        drawnow
-    end
-    pause
-end
+% for ans = 1:length(answers{3})
+%     question_num = 3;
+%     question = questions{question_num};
+%     answer = extractBefore(answers{3}, ans); 
+%     xi0 = make_input(question,answer);
+% 
+%     T = 10;
+%     h = zeros(N,T);
+%     h(:,1) = xi0(:);
+% 
+%     figure(1)
+%     subplot(10,1,1)
+%     plot_mem(h(:,1))
+%     title(sprintf('Question in Detail (#%d)',question_num))
+%     for t = 1:T-1
+%         h(:,t+1) = hopfield_update(h(:,t));
+% 
+%         subplot(10,1,t+1)
+%         plot_mem(h(:,t))
+%         title(sprintf('Recalled pattern at step %d',t))
+%         drawnow
+%     end
+%     pause
+% end
 
 
 %% Determine extent of basin of attraction
+for question_num = 6:7
+    for prob = .1:.05:1
+        xi0 = make_input(questions{question_num},'');
 
-question_num = 6;
-xi0 = make_input(questions{question_num},'');
+        % Add noise
+        corruption_probability = prob;
+        corrupted_bits = rand(Ny,Nx)<corruption_probability;
+        xi0 = xi0.*(1-corrupted_bits)+(1-xi0).*corrupted_bits;
 
-% Add noise
-corruption_probability = .1;
-corrupted_bits = rand(Ny,Nx)<corruption_probability;
-xi0 = xi0.*(1-corrupted_bits)+(1-xi0).*corrupted_bits;
+        T = 20;
+        h = zeros(N,T);
+        h(:,1) = xi0(:);
 
-T = 20;
-h = zeros(N,T);
-h(:,1) = xi0(:);
+        figure(1)
+        subplot(211)
+        plot_mem(h(:,1))
+        title(sprintf('Corrupted input, prob = %.2f', prob))
+        for t = 1:T-1
 
-figure(1)
-subplot(211)
-plot_mem(h(:,1))
-title('Corrupted input')
-for t = 1:T-1
-    
-    h(:,t+1) = hopfield_update(h(:,t));
-    subplot(212)
-    plot_mem(h(:,t))
-    title('Recalled pattern')
-    drawnow
+            h(:,t+1) = hopfield_update(h(:,t));
+            subplot(212)
+            plot_mem(h(:,t))
+            title('Recalled pattern')
+            drawnow
+        end
+    pause
+    end
 end
