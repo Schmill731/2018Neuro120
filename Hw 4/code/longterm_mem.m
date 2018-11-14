@@ -143,7 +143,7 @@ hopfield_update = @(h) (W*h - 1/2) >= 0;
 
 
 %% Determine extent of basin of attraction
-for question_num = 6:7
+for question_num = 7
     for prob = .1:.05:1
         xi0 = make_input(questions{question_num},'');
 
