@@ -15,11 +15,11 @@ t = ((1:S)-1)*dt; % time
 
 % W = zeros(N,N); % No recurrent connections
 
-weight_scale = 1.1;
-W = weight_scale*eye(N); % Autapses
+weight_scale = 0.9;
+% W = weight_scale*eye(N); % Autapses
 
-%[U,~,~] = svd(randn(N,N)); % Random orthonormal connections
-%W = weight_scale*U;
+[U,~,~] = svd(randn(N,N)); % Random orthonormal connections
+W = weight_scale*U;
 
 noise_scale = 0;
 W = W + noise_scale/sqrt(N)*randn(N,N);
@@ -55,11 +55,10 @@ if size(t_dead, 2) > 0
 end
 xlabel('Time (a.u.)')
 ylabel('Activity')
-legend('Activity', 'Network Inactive')
 if size(t_dead, 2) > 0
-    text(5, 0.5, sprintf('Time Becomes Inactive: %.2fs', t_dead));
+    title(sprintf('Time At Which Network Becomes Inactive: %.2fs', t_dead));
 else
-    text(5, 0.5, 'Network Remains Active');
+    title('Network Remains Active');
 end
 subplot(312)
 plot(t,I)
