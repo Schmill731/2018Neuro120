@@ -66,11 +66,27 @@ This code produces Figure \ref{fig:RNNnoR}, which we can see tells us that the a
 
 \subsection{RNN with Autapses}
 
-We comment out line 16 and uncomment line 18 and 19 of the code attached above to run the network as a set of autapses. Further, we run this three times, altering the weight scale in line 18 to be 0.9, 1, and 1.1. This produces Figures \ref{fig:RNN09}, \ref{fig:RNN10}, \ref{fig:RNN11}
+We comment out line 16 and uncomment line 18 and 19 of the code attached above to run the network as a set of autapses. Further, we run this three times, altering the weight scale in line 18 to be 0.9, 1, and 1.1. This produces Figures \ref{fig:RNN09}, \ref{fig:RNN10}, and \ref{fig:RNN11}.
+
+In Figure \ref{fig:RNN09}, we see that activity in the network has not died out completely 9 seconds after the pulse, but it seems like if we expanded the time scale, the network activity would die out at around 12-14 seconds. \\
+In Figure \ref{fig:RNN10}, we see that activity in the network remains stable after $t = 2$s.\\
+In Figure \ref{fig:RNN11}, we see that activity in the network appears to diverge towards $+\infty$.\\
 
 \begin{figure}[ht!]
-\includegraphics[width=1\textwidth]{RNNnoR.eps}
-\caption{The dynamics of a RNN with no recurrent connections.}
-\label{fig:RNNnoR}
+\includegraphics[width=1\textwidth]{RNN09.eps}
+\caption{The dynamics of a RNN with autapses. $c = 0.9$}
+\label{fig:RNN09}
+\end{figure}
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{RNN10.eps}
+\caption{The dynamics of a RNN with autapses. $c = 1.0$}
+\label{fig:RNN10}
+\end{figure}
+
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{RNN11.eps}
+\caption{The dynamics of a RNN with autapses. $c = 1.1$}
+\label{fig:RNN11}
 \end{figure}
 \end{document}
