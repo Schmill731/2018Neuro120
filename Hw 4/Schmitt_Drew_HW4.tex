@@ -97,4 +97,59 @@ We see that when the input is on, the activity increases as expected as $VI(t)$ 
 
 Thus, the best choice of $c$ to stably store a memory would be $c=1$, as neuronal activity remains constant, neither dying out over time nor diverging towards infinity (brains crashing!).
 
+\subsection{RNN with Interconnections}
+
+We comment out line 19 and uncomment line 21 and 22 of the code attached above to run the network with random interconnections between neurons. Further, we run this three times, altering the weight scale in line 18 to be 0.9, 1, and 1.1. This produces Figures \ref{fig:RNN09rand}, \ref{fig:RNN10rand}, and \ref{fig:RNN11rand}.
+
+In Figure \ref{fig:RNN09rand}, we see that activity in the network begins to calm around $t=10$s. \\
+In Figure \ref{fig:RNN10rand}, we see that activity in the network does not appear to die out.\\
+In Figure \ref{fig:RNN11rand}, we see that activity in the network appears to diverge towards $-\infty/+\infty$.
+
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{RNN09rand.eps}
+\caption{The dynamics of a RNN with interconnections. $c = 0.9$}
+\label{fig:RNN09rand}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{RNN10rand.eps}
+\caption{The dynamics of a RNN with interconnections. $c = 1.0$}
+\label{fig:RNN10rand}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{RNN11rand.eps}
+\caption{The dynamics of a RNN with interconnections. $c = 1.1$}
+\label{fig:RNN11rand}
+\end{figure}
+
+The memory behavior appears to be qualitatively similar to part (b). For $c=1$, the activities in the network appear to never stop changing. Again, the magnitude of the eigenvalues of the recurrent matrix $W$ appear to be equal to the weight scale $c$. The eigenvalue magnitudes do continue to explain the memory properties of the network.
+
+\subsection{RNN with Random Noise}
+
+We uncomment line 24 and 25 of the code attached above to run the network with random interconnections between neurons and with random noise. Further, we run this two times, altering the weight scale in line 18 to be 0.9 and 1.0. This produces Figures \ref{fig:RNN09randnoise} and \ref{fig:RNN10randnoise}.
+
+In Figure \ref{fig:RNN09randnoise}, we see that activity in the network begins to calm around $t=10$s. \\
+In Figure \ref{fig:RNN10randnoise}, we see that activity in the network does not appear to die out.\\
+
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{RNN09randnoise.eps}
+\caption{The dynamics of a RNN with random noise. $c = 0.9$}
+\label{fig:RNN09randnoise}
+\end{figure}
+
+\begin{figure}[H]
+\includegraphics[width=1\textwidth]{RNN10randnoise.eps}
+\caption{The dynamics of a RNN with random noise. $c = 1.0$}
+\label{fig:RNN10randnoise}
+\end{figure}
+
+For $c=0.9$, the small amount of noise does not appear to significantly affect the stability of the memories. However, for $c=1$, the small amount of noise appears to destabilize the memories, with some activities even oscillating at magnitudes diverging to infinity. Looking at the eigenvalue magnitudes of the perturbed matrices, for $c=0.9$, the eigenvalue magnitudes appear to be decreasing, always less than 1. However, for $c=1.0$, the eigenvalue magnitudes start above 1, but then decrease below 1 as time goes on.
+
+In practice, it appears that a memory with $c = 0.9$ would be better where noise is inevitable.
+
+\section{Long Term Memory}
+
+
+
 \end{document}
