@@ -15,7 +15,7 @@
 \usepackage{wrapfig}
 \usepackage{epstopdf}
 
-\graphicspath{ {images/} }
+\graphicspath{ {code/images/} }
 
 \def\layersep{2.5cm}
 
@@ -54,13 +54,19 @@
 
 \subsection{RNN Dynamics with No Recurrent Connections}
 
+\begin{figure}[ht!]
+\includegraphics[width=1\textwidth]{RNNnoR.eps}
+\caption{The dynamics of a RNN with no recurrent connections.}
+\label{fig:RNNnoR}
+\end{document}
+
 We build the RNN with the following code:
 \lstinputlisting{shortterm_mem.m}
 This code produces Figure \ref{fig:RNNnoR}, which we can see tells us that the activity in the network has died out at $t = 2.8$s.
 
 \subsection{RNN with Autapses}
 
-We comment out line 16 and uncomment line 18 and 19 of the code attached above to run the network 
+We comment out line 16 and uncomment line 18 and 19 of the code attached above to run the network as a set of autapses. Further, we run this three times, altering the weight scale in line 18 to be 0.9, 1, and 1.1. This produces Figures \ref{fig:RNN09}, \ref{fig:RNN10}, \ref{fig:RNN11}
 
 \begin{figure}[ht!]
 \includegraphics[width=1\textwidth]{RNNnoR.eps}
