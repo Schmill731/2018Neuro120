@@ -5,7 +5,7 @@ N = 50; % Number of neurons in network
 dt = .1; % Discretization timestep
 tau = .4; % Time constant
 
-T = 10; % Max time
+T = 100; % Max time
 S = ceil(T/dt); % num simulation steps
 t = ((1:S)-1)*dt; % time
 
@@ -15,13 +15,13 @@ t = ((1:S)-1)*dt; % time
 
 % W = zeros(N,N); % No recurrent connections
 
-weight_scale = 0.9;
+weight_scale = 1;
 % W = weight_scale*eye(N); % Autapses
 
 [U,~,~] = svd(randn(N,N)); % Random orthonormal connections
 W = weight_scale*U;
 
-noise_scale = 0;
+noise_scale = 0.2;
 W = W + noise_scale/sqrt(N)*randn(N,N);
 
 
@@ -42,7 +42,7 @@ end
 lam = eig(W);
 
 % Calculate when activity died out
-[row, col] = find(r<0.1);
+[row, col] = find(abs(r)<0.1);
 freq = tabulate(col);
 t_dead = t(freq(:, 2) == 50);
 t_dead = min(t_dead(t_dead>2));
